@@ -19,12 +19,11 @@ if (FFTW_LIBRARIES AND FFTW_INCLUDE_DIRS)
   # in cache already
   set(FFTW_FOUND TRUE)
 else (FFTW_LIBRARIES AND FFTW_INCLUDE_DIRS)
-
-if (FFTW_USE_STATIC_LIBS AND NOT MSVC)
+  if (FFTW_USE_STATIC_LIBS AND NOT MSVC)
     set (LIBFFTW_LIB_SUFFIX ".a" CACHE INTERNAL "libfftw3 library name suffix passed to find_library")
-else (FFTW_USE_STATIC_LIBS AND NOT MSVC)
+  else (FFTW_USE_STATIC_LIBS AND NOT MSVC)
     set (LIBFFTW_LIB_SUFFIX ".dylib" CACHE INTERNAL "libfftw3 library name suffix passed to find_library")
-endif (FFTW_USE_STATIC_LIBS AND NOT MSVC)
+  endif (FFTW_USE_STATIC_LIBS AND NOT MSVC)
 
   find_path(FFTW_INCLUDE_DIR
     NAMES
