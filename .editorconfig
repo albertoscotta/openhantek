@@ -9,5 +9,5 @@ end_of_line = lf
 insert_final_newline = true
 
 # Tab indentation (no size specified)
-[*.{cpp,h}]
+[*.{cpp,h,cmake}]
 indent_style = space
