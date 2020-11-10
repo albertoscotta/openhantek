@@ -53,7 +53,17 @@ std::unique_ptr<USBDevice> SelectSupportedDevice::showSelectDeviceModal(libusb_c
         } else {
             ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
             if (ui->cmbDevices->currentData(Qt::UserRole+2).toBool()) {
-                ui->labelReadyState->setText(tr("Upload in progress..."));
+                if(ui->cmbDevices->currentData(Qt::UserRole+3).isNull()) {
+                    // errorMessage is not null so we are actually
+                    // uploading the FW
+                    ui->labelReadyState->setText(tr("Upload in progress..."));
+                } else {
+                    // errorMessage is null so we are not uploading the FW
+                    // for the reason contained in errorMessage
+                    ui->labelReadyState->setText(
+                        ui->cmbDevices->currentData(Qt::UserRole+3).toString()
+                    );
+                }
             } else {
                 ui->labelReadyState->setText(tr("Connection failed!"));
             }

@@ -37,6 +37,7 @@ QVariant DevicesListModel::data(const QModelIndex &index, int role) const
     if (role==Qt::UserRole) return QVariant::fromValue(entries[row].id);
     else if (role==Qt::UserRole+1) return QVariant::fromValue(entries[row].canConnect);
     else if (role==Qt::UserRole+2) return QVariant::fromValue(entries[row].needFirmware);
+    else if (role==Qt::UserRole+3) return QVariant::fromValue(entries[row].errorMessage);
 
     if (role == Qt::DisplayRole) {
         if (index.column() == 0) {
