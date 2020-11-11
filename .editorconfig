@@ -8,6 +8,8 @@ root = true
 end_of_line = lf
 insert_final_newline = true
 
-# Tab indentation (no size specified)
+# Tab indentation (4 space)
 [*.{cpp,h,cmake}]
 indent_style = space
+indent_size = 4
+
