@@ -18,6 +18,7 @@ SelectSupportedDevice::SelectSupportedDevice(QWidget *parent) :
     ui(new Ui::SelectSupportedDevice)
 {
     ui->setupUi(this);
+    setWindowIcon(QIcon(":openhantek.png"));
     newDeviceFromExistingDialog = new NewDeviceModelFromExisting(this);
     ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
     qRegisterMetaType<UniqueUSBid>("UniqueUSBid");
