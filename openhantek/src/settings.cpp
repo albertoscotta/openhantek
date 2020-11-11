@@ -203,7 +203,7 @@ void DsoSettings::save() {
     store->setValue("imageSize", exporting.imageSize);
     store->endGroup();
 
-    // Oszilloskope settings
+    // Oscilloscope settings
     store->beginGroup("scope");
     // Horizontal axis
     store->beginGroup("horizontal");
