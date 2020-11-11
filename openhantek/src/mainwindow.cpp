@@ -86,7 +86,7 @@ MainWindow::MainWindow(HantekDsoControl *dsoControl, DsoSettings *settings, Expo
     restoreGeometry(mSettings->mainWindowGeometry);
     restoreState(mSettings->mainWindowState);
 
-    // Central oszilloscope widget
+    // Central oscilloscope widget
     dsoWidget = new DsoWidget(&mSettings->scope, &mSettings->view, spec);
     setCentralWidget(dsoWidget);
 

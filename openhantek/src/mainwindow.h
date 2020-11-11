@@ -18,8 +18,8 @@ class MainWindow;
 }
 
 /// \brief The main window of the application.
-/// The main window contains the classic oszilloscope-screen and the gui
-/// elements used to control the oszilloscope.
+/// The main window contains the classic oscilloscope-screen and the gui
+/// elements used to control the oscilloscope.
 class MainWindow : public QMainWindow {
     Q_OBJECT
 

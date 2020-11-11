@@ -17,7 +17,7 @@ struct DsoSettingsScope;
 struct DsoSettingsView;
 class DataGrid;
 
-/// \brief The widget for the oszilloscope-screen
+/// \brief The widget for the oscilloscope-screen
 /// This widget contains the scopes and all level sliders.
 class DsoWidget : public QWidget {
     Q_OBJECT
@@ -31,7 +31,7 @@ class DsoWidget : public QWidget {
         LevelSlider *markerSlider;          ///< The sliders for the markers
     };
 
-    /// \brief Initializes the components of the oszilloscope-screen.
+    /// \brief Initializes the components of the oscilloscope-screen.
     /// \param settings The settings object containing the oscilloscope settings.
     /// \param dataAnalyzer The data analyzer that should be used as data source.
     /// \param parent The parent widget.
