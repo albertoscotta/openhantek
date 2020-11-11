@@ -757,7 +757,12 @@ Dso::ErrorCode HantekDsoControl::setChannelUsed(ChannelID channel, bool used) {
     }
 
     // Check if fast rate mode availability changed
-    bool fastRateChanged = (controlsettings.usedChannels <= 1) != (channelCount <= 1);
+    // It is true when we are moving between 1 and 2 channels or viceversa
+    //bool fastRateChanged = (controlsettings.usedChannels <= 1) != (channelCount <= 1);
+    // to update exclusively on this change gives some problems on initial
+    // setup, so update unconditionally
+    bool fastRateChanged = true;
+    // Update used channels
     controlsettings.usedChannels = channelCount;
 
     if (fastRateChanged) this->updateSamplerateLimits();
