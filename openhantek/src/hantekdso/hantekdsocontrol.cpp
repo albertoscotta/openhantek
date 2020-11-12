@@ -562,7 +562,9 @@ unsigned HantekDsoControl::updateSamplerate(unsigned downsampler, bool fastRate)
     this->setPretriggerPosition(controlsettings.trigger.position);
 
     // Emit signals for changed settings
-    if (fastRateChanged) {
+    //if (fastRateChanged) {
+    // The above is generally cool but not on initial setup
+    {
         emit availableRecordLengthsChanged(controlsettings.samplerate.limits->recordLengths);
         emit recordLengthChanged(getRecordLength());
     }
