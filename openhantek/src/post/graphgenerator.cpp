@@ -54,10 +54,12 @@ void GraphGenerator::generateGraphsTYvoltage(PPresult *result) {
         }
         // Check if the sample count has changed
         size_t sampleCount = samples.sample.size();
-        if (sampleCount > 500000) {
-            qWarning() << "Sample count too high!";
-            throw new std::runtime_error("Sample count too high!");
-        }
+// NOTE: Not really clear what's the use of this limitation
+// so comment it out
+//        if (sampleCount > 500000) {
+//            qWarning() << "Sample count too high!";
+//            throw new std::runtime_error("Sample count too high!");
+//        }
         sampleCount -= (swTriggerStart - preTrigSamples);
         size_t neededSize = sampleCount * 2;
 
@@ -97,10 +99,12 @@ void GraphGenerator::generateGraphsTYspectrum(PPresult *result) {
         }
         // Check if the sample count has changed
         size_t sampleCount = samples.sample.size();
-        if (sampleCount > 500000) {
-            qWarning() << "Sample count too high!";
-            throw new std::runtime_error("Sample count too high!");
-        }
+// NOTE: Not really clear what's the use of this limitation
+// so comment it out
+//        if (sampleCount > 500000) {
+//            qWarning() << "Sample count too high!";
+//            throw new std::runtime_error("Sample count too high!");
+//        }
         size_t neededSize = sampleCount * 2;
 
         // Set size directly to avoid reallocations
