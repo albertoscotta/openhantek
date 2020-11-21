@@ -83,7 +83,7 @@ HorizontalDock::HorizontalDock(DsoSettingsScope *scope, QWidget *parent, Qt::Win
     this->setSamplerate(scope->horizontal.samplerate);
     this->setTimebase(scope->horizontal.timebase);
     this->setFrequencybase(scope->horizontal.frequencybase);
-    // this->setRecordLength(scope->horizontal.recordLength);
+    this->setRecordLength(scope->horizontal.recordLength);
     this->setFormat(scope->horizontal.format);
 }
 
