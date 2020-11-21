@@ -4,6 +4,7 @@
 #include <QDesktopServices>
 #include <QFile>
 #include <QUrl>
+#include <QDebug>
 
 #include "usb/uploadFirmware.h"
 #include "usb/finddevices.h"
@@ -94,9 +95,15 @@ std::unique_ptr<USBDevice> SelectSupportedDevice::showSelectDeviceModal(libusb_c
     connect(&timer, &QTimer::timeout, [this, &model, &findDevices, &messageNoDevices]() {
         if (findDevices->updateDeviceList())
             model->updateDeviceList();
-        if (model->rowCount(QModelIndex())) {
+        // Citing https://doc.qt.io/qt-5/qcombobox.html#currentIndex-prop
+        // By default this property has a value of -1.
+        if (ui->cmbDevices->currentIndex() < 0) {
+            // If the user did not select (current index still negative)
+            // select the first entry.
             ui->cmbDevices->setCurrentIndex(0);
-        } else {
+        }
+        if (!model->rowCount(QModelIndex())) {
+            // If we don't have devices then display the proper message.
             ui->labelReadyState->setText(messageNoDevices);
         }
     });
