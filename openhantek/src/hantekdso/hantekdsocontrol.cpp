@@ -566,7 +566,8 @@ unsigned HantekDsoControl::updateSamplerate(unsigned downsampler, bool fastRate)
     // The above is generally cool but not on initial setup
     {
         emit availableRecordLengthsChanged(controlsettings.samplerate.limits->recordLengths);
-        emit recordLengthChanged(getRecordLength());
+        // This signal is not connected => useless to emit it
+        //emit recordLengthChanged(getRecordLength());
     }
 
     // Check for Roll mode

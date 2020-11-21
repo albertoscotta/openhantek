@@ -43,7 +43,9 @@ class HorizontalDock : public QDockWidget {
     double setTimebase(double timebase);
     /// \brief Changes the record length if the new value is supported.
     /// \param recordLength The record length in samples.
-    void setRecordLength(unsigned int recordLength);
+    //  \param fallbackIndex: index selected in case recordLength is not found
+    //  in the available values
+    void setRecordLength(unsigned int recordLength, int fallbackIndex = -1);
     /// \brief Changes the format if the new value is supported.
     /// \param format The format for the horizontal axis.
     /// \return Index of format-value, -1 on error.

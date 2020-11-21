@@ -125,13 +125,15 @@ int addRecordLength(QComboBox *recordLengthComboBox, unsigned recordLength) {
     return recordLengthComboBox->count()-1;
 }
 
-void HorizontalDock::setRecordLength(unsigned int recordLength) {
+void HorizontalDock::setRecordLength(unsigned int recordLength, int fallbackIndex) {
     QSignalBlocker blocker(recordLengthComboBox);
     int index = recordLengthComboBox->findData(recordLength);
     scope->horizontal.recordLength = recordLength;
 
     if (index == -1) {
-        index = addRecordLength(recordLengthComboBox, recordLength);
+        // use fallbackIndex instead of adding a new entry
+        //index = addRecordLength(recordLengthComboBox, recordLength);
+        index = fallbackIndex;
     }
     recordLengthComboBox->setCurrentIndex(index);
 }
@@ -149,12 +151,14 @@ int HorizontalDock::setFormat(Dso::GraphFormat format) {
 void HorizontalDock::setAvailableRecordLengths(const std::vector<unsigned> &recordLengths) {
     QSignalBlocker blocker(recordLengthComboBox);
 
+    int fallbackIndex = recordLengthComboBox->currentIndex();
     recordLengthComboBox->clear();
     for (auto recordLength : recordLengths) {
         addRecordLength(recordLengthComboBox, recordLength);
     }
 
-    setRecordLength(scope->horizontal.recordLength);
+    // If I change the available record lenghts I don't need to set the record
+    setRecordLength(scope->horizontal.recordLength, fallbackIndex);
 }
 
 void HorizontalDock::setSamplerateLimits(double minimum, double maximum) {
