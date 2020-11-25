@@ -102,10 +102,6 @@ bool USBDevice::connectDevice(QString &errorMessage) {
 
 USBDevice::~USBDevice() {
 	disconnectFromDevice();
-#if defined(_WIN32) || defined(_WIN64)
-	if (device != nullptr) libusb_unref_device(device);
-	device = nullptr;
-#endif
 }
 
 int USBDevice::claimInterface(const libusb_interface_descriptor *interfaceDescriptor, int endpointOut, int endPointIn) {
@@ -142,9 +138,8 @@ void USBDevice::disconnectFromDevice() {
     }
     this->handle = nullptr;
 
-#if !defined(_WIN32) || !defined(_WIN64)
-    libusb_unref_device(device);
-#endif
+    if (device != nullptr) libusb_unref_device(device);
+    device = nullptr;
 
     emit deviceDisconnected();
 }
