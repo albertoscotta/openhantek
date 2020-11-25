@@ -47,7 +47,8 @@ QString libUsbErrorString(int error) {
 
 UniqueUSBid USBDevice::computeUSBdeviceID(libusb_device *device) {
     UniqueUSBid v = 0;
-    libusb_get_port_numbers(device, (uint8_t *)&v, sizeof(v));
+    v = libusb_get_bus_number(device); // PCs can have multiple root USB hubs
+    libusb_get_port_numbers(device, ((uint8_t *)&v)+1, sizeof(v)-1);
     return v;
 }
 
