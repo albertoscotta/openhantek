@@ -62,7 +62,7 @@ int FindDevices::updateDeviceList() {
         }
     }
 
-    libusb_free_device_list(deviceList, true);
+    //libusb_free_device_list(deviceList, true);
 
     return changes;
 }
