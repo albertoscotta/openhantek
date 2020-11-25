@@ -28,6 +28,8 @@ add_custom_target(format SOURCES ".clang-format"
 add_subdirectory(translations)
 
 add_definitions(-DVERSION="${CPACK_PACKAGE_VERSION}")
+# Do not optimize for debugging, optimization disabled
+add_definitions(-O0)
 
 set(EXECTYPE "")
 if(WIN32 AND MINGW)
