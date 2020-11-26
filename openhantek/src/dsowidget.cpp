@@ -720,8 +720,8 @@ void DsoWidget::adaptTriggerPositionSlider() {
 
 /// \brief Handles valueChanged signal from the triggerPosition slider.
 /// \param index The index of the slider.
-/// \param value The new triggerPosition in seconds relative to the first
-/// sample.
+/// \param value triggerPosition in perunit of the screen width starting from
+/// the left-hand side.
 void DsoWidget::updateTriggerPosition(int index, double value, bool mainView) {
     if (index != 0) return;
 

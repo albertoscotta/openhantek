@@ -982,6 +982,7 @@ Dso::ErrorCode HantekDsoControl::setTriggerSlope(Dso::Slope slope) {
 
 void HantekDsoControl::forceTrigger() { modifyCommand<BulkCommand>(BulkCode::FORCETRIGGER); }
 
+// position is in seconds
 Dso::ErrorCode HantekDsoControl::setPretriggerPosition(double position) {
     if (!device->isConnected()) return Dso::ErrorCode::CONNECTION;
 
@@ -1003,8 +1004,8 @@ Dso::ErrorCode HantekDsoControl::setPretriggerPosition(double position) {
     }
     case BulkCode::FSETBUFFER: {
         // Calculate the position values (Inverse, maximum is 0x7ffff)
-        unsigned positionPre = 0x7ffff - recordLength + (unsigned)positionSamples;
-        unsigned positionPost = 0x7ffff - (unsigned)positionSamples;
+        unsigned positionPre = 0x80000 - recordLength + (unsigned)positionSamples;
+        unsigned positionPost = 0x80000 - (unsigned)positionSamples;
 
         // SetBuffer2250 bulk command for trigger position
         BulkSetBuffer2250 *commandSetBuffer2250 = modifyCommand<BulkSetBuffer2250>(BulkCode::FSETBUFFER);
