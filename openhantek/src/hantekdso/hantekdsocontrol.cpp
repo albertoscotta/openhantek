@@ -145,6 +145,15 @@ unsigned HantekDsoControl::calculateTriggerPoint(unsigned value) {
     unsigned result = value;
 
     // Each set bit inverts all bits with a lower value
+    // In other words, each bit of the result represents the parity bit over
+    // the more significant bits.
+    // NOTE: this function, although weird is not wrong, and the spurious
+    // sample, that sometimes should present at the end instead is a the begging,
+    // is not due to this computation.
+    // Of this one can be certain by simply noticing that with the same
+    // input value, hence same output, the spurious sample sometimes
+    // appears and sometimes not. The reason for this behaviour needs to
+    // be searched somewhere else.
     for (unsigned bitValue = 1; bitValue; bitValue <<= 1)
         if (result & bitValue) result ^= bitValue - 1;
 
@@ -247,7 +256,7 @@ void HantekDsoControl::convertRawDataToSamples(const std::vector<unsigned char> 
         const double gainStep = specification->gain[gainID].gainSteps;
 
         // Convert data from the oscilloscope and write it into the sample buffer
-        unsigned bufferPosition = controlsettings.trigger.point * 2;
+        unsigned bufferPosition = controlsettings.trigger.point * specification->channels;
         if (specification->sampleSize > 8) {
             for (unsigned pos = 0; pos < totalSampleCount; ++pos, ++bufferPosition) {
                 if (bufferPosition >= totalSampleCount) bufferPosition %= totalSampleCount;
@@ -281,7 +290,7 @@ void HantekDsoControl::convertRawDataToSamples(const std::vector<unsigned char> 
             int shiftDataBuf = 0;
 
             // Convert data from the oscilloscope and write it into the sample buffer
-            unsigned bufferPosition = controlsettings.trigger.point * 2;
+            unsigned bufferPosition = controlsettings.trigger.point * specification->channels;
             if (specification->sampleSize > 8) {
                 // Additional most significant bits after the normal data
                 unsigned extraBitsIndex = 8 - channel * 2; // Bit position offset for extra bits extraction
