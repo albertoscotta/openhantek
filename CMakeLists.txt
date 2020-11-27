@@ -28,12 +28,7 @@ else()
 endif()
 
 if("${CMAKE_SYSTEM}" MATCHES "Linux")
-  if(EXISTS "/lib/udev/rules.d/")
-    install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/firmware/60-hantek.rules"
-      DESTINATION "/lib/udev/rules.d/" COMPONENT Runtime)
-  else()
-    message(WARNING "Could not find udev rules directory (/lib/udev/rules.d/), skipping installation of udev rules.")
-  endif()
+    install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/firmware/60-hantek.rules" DESTINATION "lib/udev/rules.d/" COMPONENT Runtime)
 endif()
 
 # Add auxiliary files to the project, so that these files appear in VisualStudio/QtCreator

@@ -35,7 +35,7 @@ script:
  - make -j4
 
 before_deploy:
- - sudo make package
+ - make package
 
 deploy:
   provider: releases
