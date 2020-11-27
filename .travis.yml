@@ -1,5 +1,4 @@
 language: cpp
-dist: xenial
 
 addons:
   apt:
@@ -9,19 +8,24 @@ addons:
     - libqt5opengl5-dev
     - libusb-1.0-0-dev
     - libfftw3-dev
+  homebrew:
+    update: true
+    packages:
+    - fftw
 
-matrix:
+jobs:
   include:
     - compiler: gcc
       env: CMAKE_CXX_COMPILER=g++-5
       os: linux
+      dist: xenial
     - compiler: clang
       env: CMAKE_CXX_COMPILER=/usr/bin/clang++
       os: osx
-  
+      osx_image: xcode12.2
+
 before_install:
-    - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update; brew install qt5 fftw binutils; export CMAKE_PREFIX_PATH=$(brew --prefix qt5); fi
-    - if [[ "$TRAVIS_OS_NAME" != "osx" ]]; then pip install cmake --user; fi
+    - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then export CMAKE_PREFIX_PATH=$(brew --prefix qt5); fi
 
 before_script:
     - mkdir build
