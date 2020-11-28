@@ -304,7 +304,7 @@
     <message>
         <location filename="../src/configdialog/DsoConfigScopePage.cpp" line="27"/>
         <source>Graph</source>
-        <translation>Gráfico</translation>
+        <translation>Gráficos</translation>
     </message>
     <message>
         <location filename="../src/configdialog/DsoConfigScopePage.cpp" line="30"/>
@@ -359,7 +359,7 @@
         <location filename="../src/dsowidget.cpp" line="151"/>
         <location filename="../src/dsowidget.cpp" line="394"/>
         <source>Markers</source>
-        <translation type="unfinished">Marcadores</translation>
+        <translation>Marcadores</translation>
     </message>
     <message>
         <location filename="../src/dsowidget.cpp" line="413"/>
@@ -517,7 +517,7 @@
         <location filename="../src/hantekdso/hantekdsocontrol.cpp" line="132"/>
         <location filename="../src/hantekdso/hantekdsocontrol.cpp" line="133"/>
         <source>Couldn&apos;t get channel level data from oscilloscope</source>
-        <translation type="unfinished">Não foi possível obter dados do canal do osciloscópio</translation>
+        <translation>Não foi possível obter dados do canal do osciloscópio</translation>
     </message>
     <message>
         <location filename="../src/hantekdso/hantekdsocontrol.cpp" line="1218"/>
@@ -569,22 +569,22 @@
     <message>
         <location filename="../src/exporting/legacyexportdrawer.cpp" line="41"/>
         <source>%L1%</source>
-        <translation type="unfinished">%L1%</translation>
+        <translation>%L1%</translation>
     </message>
     <message>
         <location filename="../src/exporting/legacyexportdrawer.cpp" line="43"/>
         <source>%1  %2  %3  %4</source>
-        <translation type="unfinished">%1  %2  %3  %4</translation>
+        <translation>%1  %2  %3  %4</translation>
     </message>
     <message>
         <location filename="../src/exporting/legacyexportdrawer.cpp" line="52"/>
         <source>%1 S</source>
-        <translation type="unfinished">%1 S</translation>
+        <translation>%1 S</translation>
     </message>
     <message>
         <location filename="../src/exporting/legacyexportdrawer.cpp" line="56"/>
         <source>/s</source>
-        <translation type="unfinished">/s</translation>
+        <translation>/s</translation>
     </message>
     <message>
         <location filename="../src/exporting/legacyexportdrawer.cpp" line="60"/>
@@ -594,17 +594,17 @@
         <location filename="../src/exporting/legacyexportdrawer.cpp" line="138"/>
         <location filename="../src/exporting/legacyexportdrawer.cpp" line="142"/>
         <source>/div</source>
-        <translation type="unfinished">/div</translation>
+        <translation>/div</translation>
     </message>
     <message>
         <location filename="../src/exporting/legacyexportdrawer.cpp" line="130"/>
         <source>Zoom x%L1</source>
-        <translation type="unfinished"></translation>
+        <translation>Zoom x%L1</translation>
     </message>
     <message>
         <location filename="../src/exporting/legacyexportdrawer.cpp" line="148"/>
         <source>Marker 1/2</source>
-        <translation type="unfinished">Construtor 1/2</translation>
+        <translation>Construtor 1/2</translation>
     </message>
 </context>
 <context>
@@ -809,7 +809,7 @@
     <message>
         <location filename="../src/mainwindow.ui" line="62"/>
         <source>Export</source>
-        <translation type="unfinished">Exportar</translation>
+        <translation>Exportar</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="74"/>
@@ -864,7 +864,7 @@
     <message>
         <location filename="../src/mainwindow.ui" line="151"/>
         <source>Settings</source>
-        <translation type="unfinished">Configurações</translation>
+        <translation>Configurações</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="159"/>
@@ -883,7 +883,7 @@
     </message>
     <message>
         <source>&amp;Buffer size</source>
-        <translation type="obsolete">&amp;Tamanho do buffer</translation>
+        <translation>&amp;Tamanho do buffer</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="56"/>
@@ -1371,13 +1371,13 @@
     <message>
         <location filename="../src/exporting/exportcsv.cpp" line="31"/>
         <source>Comma-Separated Values (*.csv)</source>
-        <translation type="unfinished">Separado por ponto e vírgula (*.csv)</translation>
+        <translation>Separado por ponto e vírgula (*.csv)</translation>
     </message>
     <message>
         <location filename="../src/exporting/exportcsv.cpp" line="33"/>
         <location filename="../src/exporting/exportimage.cpp" line="35"/>
         <source>Export file...</source>
-        <translation type="unfinished">Exportar arquivo...</translation>
+        <translation>Exportar arquivo...</translation>
     </message>
     <message>
         <location filename="../src/exporting/exportimage.cpp" line="21"/>
@@ -1387,12 +1387,12 @@
     <message>
         <location filename="../src/exporting/exportimage.cpp" line="32"/>
         <source>Portable Document Format (*.pdf)</source>
-        <translation type="unfinished">Portables Documenten Format (*.pdf)</translation>
+        <translation>Portables Documenten Format (*.pdf)</translation>
     </message>
     <message>
         <location filename="../src/exporting/exportimage.cpp" line="33"/>
         <source>Image (*.png *.xpm *.jpg)</source>
-        <translation type="unfinished">Imagem (*.png *.xpm *.jpg)</translation>
+        <translation>Imagem (*.png *.xpm *.jpg)</translation>
     </message>
     <message>
         <location filename="../src/exporting/exportprint.cpp" line="21"/>
@@ -1402,42 +1402,42 @@
     <message>
         <location filename="../src/exporting/exportprint.cpp" line="38"/>
         <source>Print oscillograph</source>
-        <translation type="unfinished">Impressão</translation>
+        <translation>Impressão</translation>
     </message>
     <message>
         <location filename="../src/hantekdso/enums.cpp" line="15"/>
         <source>Voltage</source>
-        <translation type="unfinished">Voltagem</translation>
+        <translation>Voltagem</translation>
     </message>
     <message>
         <location filename="../src/hantekdso/enums.cpp" line="17"/>
         <source>Spectrum</source>
-        <translation type="unfinished">Espectro</translation>
+        <translation>Espectro</translation>
     </message>
     <message>
         <location filename="../src/hantekdso/enums.cpp" line="28"/>
         <source>T - Y</source>
-        <translation type="unfinished">T - Y</translation>
+        <translation>T - Y</translation>
     </message>
     <message>
         <location filename="../src/hantekdso/enums.cpp" line="30"/>
         <source>X - Y</source>
-        <translation type="unfinished">X - Y</translation>
+        <translation>X - Y</translation>
     </message>
     <message>
         <location filename="../src/hantekdso/enums.cpp" line="41"/>
         <source>AC</source>
-        <translation type="unfinished">AC</translation>
+        <translation>AC</translation>
     </message>
     <message>
         <location filename="../src/hantekdso/enums.cpp" line="43"/>
         <source>DC</source>
-        <translation type="unfinished">DC</translation>
+        <translation>DC</translation>
     </message>
     <message>
         <location filename="../src/hantekdso/enums.cpp" line="45"/>
         <source>GND</source>
-        <translation type="unfinished">GND</translation>
+        <translation>GND</translation>
     </message>
     <message>
         <location filename="../src/hantekdso/enums.cpp" line="57"/>
@@ -1452,22 +1452,22 @@
     <message>
         <location filename="../src/hantekdso/enums.cpp" line="61"/>
         <source>Single</source>
-        <translation type="unfinished">Simples</translation>
+        <translation>Simples</translation>
     </message>
     <message>
         <location filename="../src/hantekdso/enums.cpp" line="87"/>
         <source>Off</source>
-        <translation type="unfinished">Desligado</translation>
+        <translation>Desligado</translation>
     </message>
     <message>
         <location filename="../src/hantekdso/enums.cpp" line="89"/>
         <source>Linear</source>
-        <translation type="unfinished">Linear</translation>
+        <translation>Linear</translation>
     </message>
     <message>
         <location filename="../src/hantekdso/enums.cpp" line="91"/>
         <source>Sinc</source>
-        <translation type="unfinished">Sinc</translation>
+        <translation>Sinc</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="100"/>
@@ -1478,157 +1478,157 @@
     <message>
         <location filename="../src/post/postprocessingsettings.cpp" line="17"/>
         <source>CH1 + CH2</source>
-        <translation type="unfinished">CH1 + CH2</translation>
+        <translation>CH1 + CH2</translation>
     </message>
     <message>
         <location filename="../src/post/postprocessingsettings.cpp" line="19"/>
         <source>CH1 - CH2</source>
-        <translation type="unfinished">CH1 - CH2</translation>
+        <translation>CH1 - CH2</translation>
     </message>
     <message>
         <location filename="../src/post/postprocessingsettings.cpp" line="21"/>
         <source>CH2 - CH1</source>
-        <translation type="unfinished">CH2 - CH1</translation>
+        <translation>CH2 - CH1</translation>
     </message>
     <message>
         <location filename="../src/post/postprocessingsettings.cpp" line="31"/>
         <source>Rectangular</source>
-        <translation type="unfinished">Retangular</translation>
+        <translation>Retangular</translation>
     </message>
     <message>
         <location filename="../src/post/postprocessingsettings.cpp" line="33"/>
         <source>Hamming</source>
-        <translation type="unfinished">Hamming</translation>
+        <translation>Hamming</translation>
     </message>
     <message>
         <location filename="../src/post/postprocessingsettings.cpp" line="35"/>
         <source>Hann</source>
-        <translation type="unfinished">Hann</translation>
+        <translation>Hann</translation>
     </message>
     <message>
         <location filename="../src/post/postprocessingsettings.cpp" line="37"/>
         <source>Cosine</source>
-        <translation type="unfinished">Cosseno</translation>
+        <translation>Cosseno</translation>
     </message>
     <message>
         <location filename="../src/post/postprocessingsettings.cpp" line="39"/>
         <source>Lanczos</source>
-        <translation type="unfinished">Lanczos</translation>
+        <translation>Lanczos</translation>
     </message>
     <message>
         <location filename="../src/post/postprocessingsettings.cpp" line="41"/>
         <source>Bartlett</source>
-        <translation type="unfinished">Bartlett</translation>
+        <translation>Bartlett</translation>
     </message>
     <message>
         <location filename="../src/post/postprocessingsettings.cpp" line="43"/>
         <source>Triangular</source>
-        <translation type="unfinished">Triangular</translation>
+        <translation>Triangular</translation>
     </message>
     <message>
         <location filename="../src/post/postprocessingsettings.cpp" line="45"/>
         <source>Gauss</source>
-        <translation type="unfinished">Gauss</translation>
+        <translation>Gauss</translation>
     </message>
     <message>
         <location filename="../src/post/postprocessingsettings.cpp" line="47"/>
         <source>Bartlett-Hann</source>
-        <translation type="unfinished">Bartlett-Hann</translation>
+        <translation>Bartlett-Hann</translation>
     </message>
     <message>
         <location filename="../src/post/postprocessingsettings.cpp" line="49"/>
         <source>Blackman</source>
-        <translation type="unfinished">Blackman</translation>
+        <translation>Blackman</translation>
     </message>
     <message>
         <location filename="../src/post/postprocessingsettings.cpp" line="53"/>
         <source>Nuttall</source>
-        <translation type="unfinished">Nuttall</translation>
+        <translation>Nuttall</translation>
     </message>
     <message>
         <location filename="../src/post/postprocessingsettings.cpp" line="55"/>
         <source>Blackman-Harris</source>
-        <translation type="unfinished">Blackman-Harris</translation>
+        <translation>Blackman-Harris</translation>
     </message>
     <message>
         <location filename="../src/post/postprocessingsettings.cpp" line="57"/>
         <source>Blackman-Nuttall</source>
-        <translation type="unfinished">Blackman-Nuttall</translation>
+        <translation>Blackman-Nuttall</translation>
     </message>
     <message>
         <location filename="../src/post/postprocessingsettings.cpp" line="59"/>
         <source>Flat top</source>
-        <translation type="unfinished">Flat Top</translation>
+        <translation>Flat Top</translation>
     </message>
     <message>
         <location filename="../src/usb/usbdevice.cpp" line="18"/>
         <source>Success (no error)</source>
-        <translation type="unfinished">Sucesso (sem erro)</translation>
+        <translation>Sucesso (sem erro)</translation>
     </message>
     <message>
         <location filename="../src/usb/usbdevice.cpp" line="20"/>
         <source>Input/output error</source>
-        <translation type="unfinished">Erro na entrada/saida</translation>
+        <translation>Erro na entrada/saida</translation>
     </message>
     <message>
         <location filename="../src/usb/usbdevice.cpp" line="22"/>
         <source>Invalid parameter</source>
-        <translation type="unfinished">Parametro inválido</translation>
+        <translation>Parametro inválido</translation>
     </message>
     <message>
         <location filename="../src/usb/usbdevice.cpp" line="24"/>
         <source>Access denied (insufficient permissions)</source>
-        <translation type="unfinished">Acesso negado (permissões insuficientes)</translation>
+        <translation>Acesso negado (permissões insuficientes)</translation>
     </message>
     <message>
         <location filename="../src/usb/usbdevice.cpp" line="26"/>
         <source>No such device (it may have been disconnected)</source>
-        <translation type="unfinished">Não encontrado o dispositivo (pode estar desconectado)</translation>
+        <translation>Não encontrado o dispositivo (pode estar desconectado)</translation>
     </message>
     <message>
         <location filename="../src/usb/usbdevice.cpp" line="28"/>
         <source>Entity not found</source>
-        <translation type="unfinished">Entidade não encontrada</translation>
+        <translation>Entidade não encontrada</translation>
     </message>
     <message>
         <location filename="../src/usb/usbdevice.cpp" line="30"/>
         <source>Resource busy</source>
-        <translation type="unfinished">Recurso ocupado</translation>
+        <translation>Recurso ocupado</translation>
     </message>
     <message>
         <location filename="../src/usb/usbdevice.cpp" line="32"/>
         <source>Operation timed out</source>
-        <translation type="unfinished">Operação expirou</translation>
+        <translation>Operação expirou</translation>
     </message>
     <message>
         <location filename="../src/usb/usbdevice.cpp" line="34"/>
         <source>Overflow</source>
-        <translation type="unfinished">Transbordamento</translation>
+        <translation>Transbordamento</translation>
     </message>
     <message>
         <location filename="../src/usb/usbdevice.cpp" line="36"/>
         <source>Pipe error</source>
-        <translation type="unfinished">Erro de redirecionamento</translation>
+        <translation>Erro de redirecionamento</translation>
     </message>
     <message>
         <location filename="../src/usb/usbdevice.cpp" line="38"/>
         <source>System call interrupted (perhaps due to signal)</source>
-        <translation type="unfinished">Chamada de sistema interrompida(talvez, devido ao sinal)</translation>
+        <translation>Chamada de sistema interrompida(talvez, devido ao sinal)</translation>
     </message>
     <message>
         <location filename="../src/usb/usbdevice.cpp" line="40"/>
         <source>Insufficient memory</source>
-        <translation type="unfinished">Memória insuficiente</translation>
+        <translation>Memória insuficiente</translation>
     </message>
     <message>
         <location filename="../src/usb/usbdevice.cpp" line="42"/>
         <source>Operation not supported or unimplemented on this platform</source>
-        <translation type="unfinished">Operação não suportada ou não implementada nesta plataforma</translation>
+        <translation>Operação não suportada ou não implementada nesta plataforma</translation>
     </message>
     <message>
         <location filename="../src/usb/usbdevice.cpp" line="44"/>
         <source>Other error</source>
-        <translation type="unfinished">Outro erro</translation>
+        <translation>Outro erro</translation>
     </message>
 </context>
 <context>
