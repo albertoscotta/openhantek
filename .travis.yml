@@ -42,5 +42,6 @@ deploy:
   token: $GITHUB_TOKEN
   file_glob: true
   file: packages/*
+  edge: true
   on:
     tags: true
