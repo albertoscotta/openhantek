@@ -191,7 +191,7 @@
     <message>
         <location filename="../src/configdialog/configdialog.cpp" line="45"/>
         <source>Settings</source>
-        <translation>Settaggi</translation>
+        <translation>Impostazioni</translation>
     </message>
     <message>
         <location filename="../src/configdialog/configdialog.cpp" line="67"/>
@@ -402,7 +402,7 @@
     <message>
         <location filename="../src/docks/HorizontalDock.cpp" line="28"/>
         <source>Horizontal</source>
-        <translation>Orizzontale</translation>
+        <translation>Ascisse</translation>
     </message>
     <message>
         <location filename="../src/docks/HorizontalDock.cpp" line="31"/>
@@ -504,7 +504,7 @@
     <message>
         <location filename="../src/mainwindow.cpp" line="200"/>
         <source>&amp;Stop</source>
-        <translation>&amp;Stop</translation>
+        <translation>&amp;Ferma</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="108"/>
@@ -554,32 +554,32 @@
     <message>
         <location filename="../src/mainwindow.ui" line="74"/>
         <source>toolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>Barra degli strumenti</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="94"/>
         <source>Open layout</source>
-        <translation type="unfinished"></translation>
+        <translation>Apri layout</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="102"/>
         <source>Save layout</source>
-        <translation type="unfinished"></translation>
+        <translation>Salva layout</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="110"/>
         <source>Save as ...</source>
-        <translation type="unfinished"></translation>
+        <translation>Salva come ...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="115"/>
         <source>Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Chiudi</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="123"/>
         <source>Digital phosphor</source>
-        <translation type="unfinished"></translation>
+        <translation>Fosforo digitale</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="131"/>
@@ -589,12 +589,12 @@
     <message>
         <location filename="../src/mainwindow.ui" line="136"/>
         <source>Docking windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Finestre agganciabili</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="141"/>
         <source>Toolbars</source>
-        <translation type="unfinished"></translation>
+        <translation>Barre degli strumenti</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="146"/>
@@ -604,22 +604,22 @@
     <message>
         <location filename="../src/mainwindow.ui" line="151"/>
         <source>Settings</source>
-        <translation>Settaggi</translation>
+        <translation>Impostazioni</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="159"/>
         <source>Sampling</source>
-        <translation type="unfinished"></translation>
+        <translation>Campionamento</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="170"/>
         <source>Manual command</source>
-        <translation type="unfinished"></translation>
+        <translation>Comando manuale</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="178"/>
         <source>Cursors</source>
-        <translation type="unfinished"></translation>
+        <translation>Cursori</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="218"/>
@@ -634,7 +634,7 @@
     <message>
         <location filename="../src/mainwindow.cpp" line="47"/>
         <source>OpenHantek - Device %1 - Renderer %2</source>
-        <translation type="unfinished"></translation>
+        <translation>OpenHantek - Dispositivo %1 - Renderer %2</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="204"/>
@@ -664,12 +664,12 @@
     <message>
         <location filename="../src/mainwindow.cpp" line="276"/>
         <source>Hide measurements</source>
-        <translation type="unfinished"></translation>
+        <translation>Nascondi misure</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="278"/>
         <source>Show measurements</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra misure</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="286"/>
@@ -679,7 +679,7 @@
     <message>
         <location filename="../src/mainwindow.cpp" line="287"/>
         <source>&lt;p&gt;This is a open source software for Hantek USB oscilloscopes.&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2010, 2011 Oliver Haag&lt;br&gt;&lt;a href=&apos;mailto:oliver.haag@gmail.com&apos;&gt;oliver.haag@gmail.com&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2012-2017 OpenHantek community&lt;br&gt;&lt;a href=&apos;https://github.com/OpenHantek/openhantek&apos;&gt;https://github.com/OpenHantek/openhantek&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Questo è un software libero per oscillioscopi USB Hantek.&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2010, 2011 Oliver Haag&lt;br&gt;&lt;a href=&apos;mailto:oliver.haag@gmail.com&apos;&gt;oliver.haag@gmail.com&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2012-2017 OpenHantek community&lt;br&gt;&lt;a href=&apos;https://github.com/OpenHantek/openhantek&apos;&gt;https://github.com/OpenHantek/openhantek&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="311"/>
@@ -769,12 +769,12 @@
     <message>
         <location filename="../src/selectdevice/newdevicemodelfromexisting.cpp" line="76"/>
         <source>Sorry</source>
-        <translation type="unfinished"></translation>
+        <translation>Mi dispiace</translation>
     </message>
     <message>
         <location filename="../src/selectdevice/newdevicemodelfromexisting.cpp" line="76"/>
         <source>This is not yet implemented!</source>
-        <translation type="unfinished"></translation>
+        <translation>Questo non è implementato</translation>
     </message>
 </context>
 <context>
@@ -921,7 +921,7 @@
     <message>
         <location filename="../src/exporting/exportimage.cpp" line="21"/>
         <source>Export Image/PDF</source>
-        <translation type="unfinished"></translation>
+	<translation>Esporta immagine/PDF</translation>
     </message>
     <message>
         <location filename="../src/exporting/exportimage.cpp" line="32"/>
@@ -936,7 +936,7 @@
     <message>
         <location filename="../src/exporting/exportprint.cpp" line="21"/>
         <source>Print</source>
-        <translation type="unfinished"></translation>
+	<translation>Stampa</translation>
     </message>
     <message>
         <location filename="../src/exporting/exportprint.cpp" line="38"/>
@@ -1107,7 +1107,7 @@
     <message>
         <location filename="../src/usb/usbdevice.cpp" line="20"/>
         <source>Input/output error</source>
-        <translation>Ein-/Ausgabe Fehler</translation>
+        <translation>Errore di input/output</translation>
     </message>
     <message>
         <location filename="../src/usb/usbdevice.cpp" line="22"/>
@@ -1188,17 +1188,17 @@
     <message>
         <location filename="../src/selectdevice/selectsupporteddevice.ui" line="14"/>
         <source>Select device</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleziona dispositivo</translation>
     </message>
     <message>
         <location filename="../src/selectdevice/selectsupporteddevice.ui" line="27"/>
         <source>Supported device</source>
-        <translation type="unfinished"></translation>
+        <translation>Dispositivo supportato</translation>
     </message>
     <message>
         <location filename="../src/selectdevice/selectsupporteddevice.ui" line="39"/>
         <source>Devices:</source>
-        <translation type="unfinished"></translation>
+        <translation>Dispositivi:</translation>
     </message>
     <message>
         <location filename="../src/selectdevice/selectsupporteddevice.ui" line="46"/>
@@ -1209,57 +1209,57 @@
     <message>
         <location filename="../src/selectdevice/selectsupporteddevice.ui" line="83"/>
         <source>Try unsupported</source>
-        <translation type="unfinished"></translation>
+        <translation>Prova non supportato</translation>
     </message>
     <message>
         <location filename="../src/selectdevice/selectsupporteddevice.ui" line="89"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Your device might not directly be supported by OpenHantek. But it might be compatible to one of the existing devices. Help us to identify those devices and report back on our &lt;a href=&quot;https://github.com/OpenHantek/openhantek/issues&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;issue tracker&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Il tuo dispositivo non è direttamente supportato da OpenHantek, ma potrebbe essere compatibile con qualcun altro. Aiutaci a identificare questi dispositivi e segnalali sul nostro &lt;a href=&quot;https://github.com/OpenHantek/openhantek/issues&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;tracciatore di problemi&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/selectdevice/selectsupporteddevice.ui" line="105"/>
         <source>Add new device from template</source>
-        <translation type="unfinished"></translation>
+        <translation>Aggiungi nuovo dispositivo da template</translation>
     </message>
     <message>
         <location filename="../src/selectdevice/selectsupporteddevice.cpp" line="54"/>
         <source>Device ready to use</source>
-        <translation type="unfinished"></translation>
+	<translation>Dispositivo pronto all'uso</translation>
     </message>
     <message>
         <location filename="../src/selectdevice/selectsupporteddevice.cpp" line="61"/>
         <source>Upload in progress...</source>
-        <translation type="unfinished"></translation>
+        <translation>Caricamento...</translation>
     </message>
     <message>
         <location filename="../src/selectdevice/selectsupporteddevice.cpp" line="70"/>
         <source>Connection failed!</source>
-        <translation type="unfinished"></translation>
+        <translation>Connessione fallita!</translation>
     </message>
     <message>
         <location filename="../src/selectdevice/selectsupporteddevice.cpp" line="75"/>
         <source>&lt;p&gt;OpenHantek did not find any compatible devices.&lt;/p&gt;&lt;p&gt;&lt;img align=&apos;right&apos; height=&apos;150&apos; src=&apos;qrc:///switch.png&apos;&gt;Don&apos;t forget to switch your device into oscilloscope mode if it has multiple modes.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;OpenHantek non ha trovato nessun dispositovo compatibile.&lt;/p&gt;&lt;p&gt;&lt;img align=&apos;right&apos; height=&apos;150&apos; src=&apos;qrc:///switch.png&apos;&gt;Non dimenticare di mettere il tuo dispostivo in modalità oscilloscopio se ha più modalità di funzionamento.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/selectdevice/selectsupporteddevice.cpp" line="80"/>
         <source>&lt;p&gt;Please make sure you have installed the windows usb driver correctly&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Cerca di essere sicuro di aver installato il driver USB per Windows correttamente&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/selectdevice/selectsupporteddevice.cpp" line="84"/>
         <source>&lt;p&gt;Please make sure you have copied the udev rules file to &lt;b&gt;%1&lt;/b&gt; for correct USB access permissions.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Accertati di aver copiato il file con le regole per udev  &lt;b&gt;%1&lt;/b&gt; per aver i corretti permessi USB.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/selectdevice/selectsupporteddevice.cpp" line="88"/>
         <source>&lt;p&gt;Visit the build and run instruction &lt;a href=&apos;https://github.com/OpenHantek/openhantek/blob/master/docs/build.md&apos;&gt;website&lt;/a&gt; for help.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Visita il &lt;a href=&apos;https://github.com/OpenHantek/openhantek/blob/master/docs/build.md&apos;&gt;sito&lt;/a&gt; per aiuto su come compilare e eseguire.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/selectdevice/selectsupporteddevice.cpp" line="125"/>
         <source>Can&apos;t initalize USB: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Non riesco a inizializzare l&apos;USB: %1</translation>
     </message>
 </context>
 <context>
@@ -1285,12 +1285,12 @@
     <message>
         <location filename="../src/docks/TriggerDock.cpp" line="31"/>
         <source>Mode</source>
-        <translation>Modalità</translation>
+        <translation>Modo</translation>
     </message>
     <message>
         <location filename="../src/docks/TriggerDock.cpp" line="35"/>
         <source>Slope</source>
-        <translation>Versante</translation>
+        <translation>Fronte</translation>
     </message>
     <message>
         <location filename="../src/docks/TriggerDock.cpp" line="39"/>
@@ -1308,7 +1308,7 @@
     <message>
         <location filename="../src/docks/VoltageDock.cpp" line="50"/>
         <source>Invert</source>
-        <translation type="unfinished"></translation>
+        <translation>Cambia segno</translation>
     </message>
 </context>
 </TS>
