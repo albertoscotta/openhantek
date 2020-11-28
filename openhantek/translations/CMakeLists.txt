@@ -1,3 +1,5 @@
+# See this question on stackoverflow on why the following line is relevant
+# https://stackoverflow.com/q/37960897
 set_directory_properties(PROPERTIES CLEAN_NO_CUSTOM 1)
 
 find_package(Qt5LinguistTools QUIET)
@@ -9,8 +11,15 @@ if (NOT Qt5LinguistTools_FOUND)
     return()
 endif()
 
+file(GLOB_RECURSE SRCS "${CMAKE_SOURCE_DIR}/*.cpp")
+file(GLOB_RECURSE UIS "${CMAKE_SOURCE_DIR}/*.ui")
 file(GLOB TS_FILES "*.ts")
-qt5_create_translation(TRANSLATION_BIN_FILES ${TS_FILES})
+qt5_create_translation(TRANSLATION_BIN_FILES ${SRC} ${UIS} ${TS_FILES})
+#qt5_create_translation(TRANSLATION_BIN_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})
+# Even though this make look cleaner, it does not update the translation file
+# because is not dependent on them. Hence it updates only when the directory
+# ${CMAKE_SOURCE_DIR} is udpated or any of its files.
+# This would be a strange behavior!
 
 # We prepare the translations.qrc file and insert all available compiled translation files now.
 set(QRC_ITEMS "")
