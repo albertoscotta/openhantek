@@ -10,6 +10,7 @@
  * to update the list of available devices.
  */
 class RawDevicesListModel: public QAbstractTableModel {
+Q_OBJECT
 public:
     RawDevicesListModel(libusb_context *context, QObject *parent = 0);
     // QAbstractItemModel interface

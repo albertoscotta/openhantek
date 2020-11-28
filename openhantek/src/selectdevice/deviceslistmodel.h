@@ -11,6 +11,7 @@ class FindDevices;
  * to update the list of available devices.
  */
 class DevicesListModel: public QAbstractTableModel {
+Q_OBJECT
 public:
     DevicesListModel(FindDevices* findDevices);
     // QAbstractItemModel interface

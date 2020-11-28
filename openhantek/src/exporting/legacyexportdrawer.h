@@ -2,6 +2,7 @@
 
 #pragma once
 
+#include <QObject>
 #include <QPainter>
 #include <QPrinter>
 #include <QSize>
@@ -22,7 +23,9 @@ namespace Dso { struct ControlSpecification; }
 /// http://doc.qt.io/qt-5/qopenglframebufferobject.html
 ///
 /// https://dangelog.wordpress.com/2013/02/10/using-fbos-instead-of-pbuffers-in-qt-5-2/
-class LegacyExportDrawer {
+class LegacyExportDrawer : QObject {
+  Q_OBJECT
+
   public:
     /// Draw the graphs coming from source and labels to the destination paintdevice.
     static bool exportSamples(const PPresult *source, QPaintDevice* dest,
