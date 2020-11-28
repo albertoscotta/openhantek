@@ -185,10 +185,6 @@
         <source>Spectrum</source>
         <translation>Spektrum</translation>
     </message>
-    <message>
-        <source>Graph</source>
-        <translation type="vanished">Graph</translation>
-    </message>
 </context>
 <context>
     <name>DsoConfigDialog</name>
@@ -284,14 +280,6 @@
         <translation>Linear</translation>
     </message>
     <message>
-        <source>Sinc</source>
-        <translation type="vanished">Sinc</translation>
-    </message>
-    <message>
-        <source>Antialiasing</source>
-        <translation type="vanished">Antialiasing</translation>
-    </message>
-    <message>
         <location filename="../src/configdialog/DsoConfigScopePage.cpp" line="11"/>
         <source>Interpolation</source>
         <translation>Interpolation</translation>
@@ -335,22 +323,6 @@
         <translation>/div</translation>
     </message>
     <message>
-        <source>Portable Document Format (*.pdf)</source>
-        <translation type="vanished">Portables Dokumentenformat (*.pdf)</translation>
-    </message>
-    <message>
-        <source>PostScript (*.ps)</source>
-        <translation type="vanished">PostScript (*.ps)</translation>
-    </message>
-    <message>
-        <source>Export file...</source>
-        <translation type="vanished">Datei exportieren...</translation>
-    </message>
-    <message>
-        <source>Marker 1/2</source>
-        <translation type="vanished">Marker 1/2</translation>
-    </message>
-    <message>
         <location filename="../src/dsowidget.cpp" line="70"/>
         <source>TR</source>
         <translation type="unfinished"></translation>
@@ -388,49 +360,6 @@
         <source>/s</source>
         <translation>/s</translation>
     </message>
-    <message>
-        <source>Image (*.png *.xpm *.jpg)</source>
-        <translation type="vanished">Bild (*.png *.xpm *.jpg)</translation>
-    </message>
-    <message>
-        <source>Comma-Separated Values (*.csv)</source>
-        <translation type="vanished">Kommagetrennte Werte (*.csv)</translation>
-    </message>
-</context>
-<context>
-    <name>Exporter</name>
-    <message>
-        <source>Print oscillograph</source>
-        <translation type="vanished">Oszillograph drucken</translation>
-    </message>
-    <message>
-        <source>%L1%</source>
-        <translation type="vanished">%L1%</translation>
-    </message>
-    <message>
-        <source>%1  %2  %3  %4</source>
-        <translation type="vanished">%1  %2  %3  %4</translation>
-    </message>
-    <message>
-        <source>%1 S</source>
-        <translation type="vanished">%1 S</translation>
-    </message>
-    <message>
-        <source>/s</source>
-        <translation type="vanished">/s</translation>
-    </message>
-    <message>
-        <source>/div</source>
-        <translation type="vanished">/div</translation>
-    </message>
-    <message>
-        <source>Zoom x%L1</source>
-        <translation type="vanished">Zoom x%L1</translation>
-    </message>
-    <message>
-        <source>Marker 1/2</source>
-        <translation type="vanished">Marker 1/2</translation>
-    </message>
 </context>
 <context>
     <name>ExporterRegistry</name>
@@ -451,60 +380,6 @@
         <location filename="../src/glscope.cpp" line="178"/>
         <source>System does not support OpenGL Shading Language (GLSL)</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>Hantek::Control</name>
-    <message>
-        <source>EXT</source>
-        <translation type="vanished">EXT</translation>
-    </message>
-    <message>
-        <source>EXT/10</source>
-        <translation type="vanished">EXT/10</translation>
-    </message>
-    <message>
-        <source>The device has been disconnected</source>
-        <translation type="vanished">Die Verbindung zum Gerät wurde getrennt</translation>
-    </message>
-    <message>
-        <source>Unknown model</source>
-        <translation type="vanished">Unbekanntes Modell</translation>
-    </message>
-    <message>
-        <source>Couldn&apos;t get channel level data from oscilloscope</source>
-        <translation type="vanished">Konnte Kanalpegeldaten des Oszilloskops nicht lesen</translation>
-    </message>
-</context>
-<context>
-    <name>Hantek::Device</name>
-    <message>
-        <source>Can&apos;t search for Hantek oscilloscopes: %1</source>
-        <translation type="vanished">Suche nach Hantek Oszilloskopen fehlgeschlagen: %1</translation>
-    </message>
-    <message>
-        <source>Failed to claim interface %1 of device %2: %3</source>
-        <translation type="vanished">Anforderung der Schnittstelle %1 des Gerätes %2 fehlgeschlagen: %3</translation>
-    </message>
-    <message>
-        <source>Device found: Hantek %1 (%2)</source>
-        <translation type="vanished">Gerät gefunden: Hantek %1 (%2)</translation>
-    </message>
-    <message>
-        <source>Couldn&apos;t open device %1</source>
-        <translation type="vanished">Konnte Gerät %1 nicht öffnen</translation>
-    </message>
-    <message>
-        <source>No Hantek oscilloscope found</source>
-        <translation type="vanished">Keine Hantek Oszilloskope gefunden</translation>
-    </message>
-    <message>
-        <source>Failed to get device list: %1</source>
-        <translation type="vanished">Abrufen der Geräteliste fehlgeschlagen: %1</translation>
-    </message>
-    <message>
-        <source>Couldn&apos;t open device %1: %2</source>
-        <translation type="vanished">Konnte Gerät %1 nicht öffnen: %2</translation>
     </message>
 </context>
 <context>
@@ -606,102 +481,14 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <source>OpenHantek</source>
-        <translation type="vanished">OpenHantek</translation>
-    </message>
-    <message>
-        <source>&amp;Open...</source>
-        <translation type="vanished">&amp;Öffnen...</translation>
-    </message>
-    <message>
         <location filename="../src/mainwindow.ui" line="97"/>
         <source>Ctrl+O</source>
         <translation>Strg+O</translation>
     </message>
     <message>
-        <source>Open saved settings</source>
-        <translation type="vanished">Gespeicherte Einstellungen öffnen</translation>
-    </message>
-    <message>
-        <source>&amp;Save</source>
-        <translation type="vanished">&amp;Speichern</translation>
-    </message>
-    <message>
         <location filename="../src/mainwindow.ui" line="105"/>
         <source>Ctrl+S</source>
         <translation>Strg+S</translation>
-    </message>
-    <message>
-        <source>Save the current settings</source>
-        <translation type="vanished">Aktuelle Einstellungen speichern</translation>
-    </message>
-    <message>
-        <source>Save &amp;as...</source>
-        <translation type="vanished">Speichern &amp;unter...</translation>
-    </message>
-    <message>
-        <source>Save the current settings to another file</source>
-        <translation type="vanished">Aktuelle Einstellungen in anderer Datei speichern</translation>
-    </message>
-    <message>
-        <source>&amp;Print...</source>
-        <translation type="vanished">&amp;Drucken...</translation>
-    </message>
-    <message>
-        <source>Ctrl+P</source>
-        <translation type="vanished">Strg+P</translation>
-    </message>
-    <message>
-        <source>Print the oscilloscope screen</source>
-        <translation type="vanished">Den Oscilloskopbildschirm drucken</translation>
-    </message>
-    <message>
-        <source>&amp;Export as...</source>
-        <translation type="vanished">&amp;Exportieren als...</translation>
-    </message>
-    <message>
-        <source>Ctrl+E</source>
-        <translation type="vanished">Strg+E</translation>
-    </message>
-    <message>
-        <source>Export the oscilloscope data to a file</source>
-        <translation type="vanished">Die Oszilloskopdaten in eine Datei exportieren</translation>
-    </message>
-    <message>
-        <source>E&amp;xit</source>
-        <translation type="vanished">&amp;Beenden</translation>
-    </message>
-    <message>
-        <source>Ctrl+Q</source>
-        <translation type="vanished">Strg+Q</translation>
-    </message>
-    <message>
-        <source>Exit the application</source>
-        <translation type="vanished">Anwendung beenden</translation>
-    </message>
-    <message>
-        <source>&amp;Settings</source>
-        <translation type="vanished">&amp;Einstellungen</translation>
-    </message>
-    <message>
-        <source>Configure the oscilloscope</source>
-        <translation type="vanished">Das Oszilloskop konfigurieren</translation>
-    </message>
-    <message>
-        <source>Send command</source>
-        <translation type="vanished">Befehl senden</translation>
-    </message>
-    <message>
-        <source>Shift+C</source>
-        <translation type="vanished">Shift+C</translation>
-    </message>
-    <message>
-        <source>&amp;Docking windows</source>
-        <translation type="vanished">&amp;Dockfenster</translation>
-    </message>
-    <message>
-        <source>&amp;Toolbars</source>
-        <translation type="vanished">&amp;Werkzeugleisten</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="218"/>
@@ -720,10 +507,6 @@
         <translation>&amp;Stop</translation>
     </message>
     <message>
-        <source>&lt;p&gt;This is a open source software for Hantek USB oscilloscopes.&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2010, 2011 Oliver Haag &amp;lt;oliver.haag@gmail.com&amp;gt;&lt;/p&gt;</source>
-        <translation type="vanished">&lt;p&gt;Dies ist ein Open-Source Programm für Hantek USB Oszilloskope.&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2010, 2011 Oliver Haag &amp;lt;oliver.haag@gmail.com&amp;gt;&lt;/p&gt;</translation>
-    </message>
-    <message>
         <location filename="../src/mainwindow.cpp" line="108"/>
         <source>Invalid command</source>
         <translation>Ungültiger Befehl</translation>
@@ -737,30 +520,6 @@
         <location filename="../src/mainwindow.cpp" line="201"/>
         <source>Stop the oscilloscope</source>
         <translation>Das Oszilloskop anhalten</translation>
-    </message>
-    <message>
-        <source>Digital &amp;phosphor</source>
-        <translation type="vanished">Digitaler &amp;Phosphor</translation>
-    </message>
-    <message>
-        <source>&amp;Zoom</source>
-        <translation type="vanished">&amp;Zoom</translation>
-    </message>
-    <message>
-        <source>&amp;About</source>
-        <translation type="vanished">&amp;Über</translation>
-    </message>
-    <message>
-        <source>Show information about this program</source>
-        <translation type="vanished">Zeige Informationen über dieses Programm</translation>
-    </message>
-    <message>
-        <source>About &amp;Qt</source>
-        <translation type="vanished">Über &amp;Qt</translation>
-    </message>
-    <message>
-        <source>Show the Qt library&apos;s About box</source>
-        <translation type="vanished">Zeige Dialog zur Qt Bibliothek</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="14"/>
@@ -861,22 +620,6 @@
         <location filename="../src/mainwindow.ui" line="178"/>
         <source>Cursors</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>File</source>
-        <translation type="vanished">Datei</translation>
-    </message>
-    <message>
-        <source>Oscilloscope</source>
-        <translation type="vanished">Oszilloskop</translation>
-    </message>
-    <message>
-        <source>View</source>
-        <translation type="vanished">Ansicht</translation>
-    </message>
-    <message>
-        <source>Ready</source>
-        <translation type="vanished">Bereit</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="218"/>
@@ -1037,62 +780,6 @@
 <context>
     <name>QApplication</name>
     <message>
-        <source>Success (no error)</source>
-        <translation type="vanished">Erfolgreich (Kein Fehler)</translation>
-    </message>
-    <message>
-        <source>Input/output error</source>
-        <translation type="vanished">Ein-/Ausgabe Fehler</translation>
-    </message>
-    <message>
-        <source>Invalid parameter</source>
-        <translation type="vanished">Ungültiger Parameter</translation>
-    </message>
-    <message>
-        <source>Access denied (insufficient permissions)</source>
-        <translation type="vanished">Zugriff verweigert (Unzureichende Berechtigungen)</translation>
-    </message>
-    <message>
-        <source>No such device (it may have been disconnected)</source>
-        <translation type="vanished">Gerät nicht vorhanden (Möglicherweise wurde es abgesteckt)</translation>
-    </message>
-    <message>
-        <source>Entity not found</source>
-        <translation type="vanished">Datensatz nicht gefunden</translation>
-    </message>
-    <message>
-        <source>Resource busy</source>
-        <translation type="vanished">Quelle belegt</translation>
-    </message>
-    <message>
-        <source>Operation timed out</source>
-        <translation type="vanished">Zeitüberschreitung</translation>
-    </message>
-    <message>
-        <source>Overflow</source>
-        <translation type="vanished">Überlauf</translation>
-    </message>
-    <message>
-        <source>Pipe error</source>
-        <translation type="vanished">Leitungsfehler</translation>
-    </message>
-    <message>
-        <source>System call interrupted (perhaps due to signal)</source>
-        <translation type="vanished">Systemaufruf unterbrochen (Möglicherweise aufgrund eines Signals)</translation>
-    </message>
-    <message>
-        <source>Insufficient memory</source>
-        <translation type="vanished">Unzureichender Speicher</translation>
-    </message>
-    <message>
-        <source>Operation not supported or unimplemented on this platform</source>
-        <translation type="vanished">Vorgang auf diesem System nicht unterstützt oder nicht implementiert</translation>
-    </message>
-    <message>
-        <source>Other error</source>
-        <translation type="vanished">Anderer Fehler</translation>
-    </message>
-    <message>
         <location filename="../src/utils/printutils.cpp" line="21"/>
         <source>%L1 µV</source>
         <translation>%L1 µV</translation>
@@ -1211,126 +898,6 @@
         <location filename="../src/settings.cpp" line="34"/>
         <source>SPM</source>
         <translation>SPM</translation>
-    </message>
-    <message>
-        <source>Voltage</source>
-        <translation type="vanished">Spannung</translation>
-    </message>
-    <message>
-        <source>Spectrum</source>
-        <translation type="vanished">Spektrum</translation>
-    </message>
-    <message>
-        <source>T - Y</source>
-        <translation type="vanished">T - Y</translation>
-    </message>
-    <message>
-        <source>X - Y</source>
-        <translation type="vanished">X - Y</translation>
-    </message>
-    <message>
-        <source>AC</source>
-        <translation type="vanished">AC</translation>
-    </message>
-    <message>
-        <source>DC</source>
-        <translation type="vanished">DC</translation>
-    </message>
-    <message>
-        <source>GND</source>
-        <translation type="vanished">GND</translation>
-    </message>
-    <message>
-        <source>CH1 + CH2</source>
-        <translation type="vanished">CH1 + CH2</translation>
-    </message>
-    <message>
-        <source>CH1 - CH2</source>
-        <translation type="vanished">CH1 - CH2</translation>
-    </message>
-    <message>
-        <source>CH2 - CH1</source>
-        <translation type="vanished">CH2 - CH1</translation>
-    </message>
-    <message>
-        <source>Auto</source>
-        <translation type="vanished">Auto</translation>
-    </message>
-    <message>
-        <source>Normal</source>
-        <translation type="vanished">Normal</translation>
-    </message>
-    <message>
-        <source>Single</source>
-        <translation type="vanished">Einzel</translation>
-    </message>
-    <message>
-        <source>Rectangular</source>
-        <translation type="vanished">Rechteck</translation>
-    </message>
-    <message>
-        <source>Hamming</source>
-        <translation type="vanished">Hamming</translation>
-    </message>
-    <message>
-        <source>Hann</source>
-        <translation type="vanished">Hann</translation>
-    </message>
-    <message>
-        <source>Cosine</source>
-        <translation type="vanished">Cosinus</translation>
-    </message>
-    <message>
-        <source>Lanczos</source>
-        <translation type="vanished">Lanczos</translation>
-    </message>
-    <message>
-        <source>Bartlett</source>
-        <translation type="vanished">Bartlett</translation>
-    </message>
-    <message>
-        <source>Triangular</source>
-        <translation type="vanished">Dreieck</translation>
-    </message>
-    <message>
-        <source>Gauss</source>
-        <translation type="vanished">Gauss</translation>
-    </message>
-    <message>
-        <source>Bartlett-Hann</source>
-        <translation type="vanished">Bartlett-Hann</translation>
-    </message>
-    <message>
-        <source>Blackman</source>
-        <translation type="vanished">Blackman</translation>
-    </message>
-    <message>
-        <source>Nuttall</source>
-        <translation type="vanished">Nuttall</translation>
-    </message>
-    <message>
-        <source>Blackman-Harris</source>
-        <translation type="vanished">Blackman-Harris</translation>
-    </message>
-    <message>
-        <source>Blackman-Nuttall</source>
-        <translation type="vanished">Blackman-Nuttall</translation>
-    </message>
-    <message>
-        <source>Flat top</source>
-        <translation type="vanished">Flat Top</translation>
-    </message>
-    <message>
-        <source>Off</source>
-        <translation type="vanished">Aus</translation>
-    </message>
-    <message>
-        <source>Linear</source>
-        <translation type="vanished">Linear</translation>
-    </message>
-    <message>
-        <source>Sinc</source>
-        <translation type="vanished">Sinc</translation>
     </message>
 </context>
 <context>
