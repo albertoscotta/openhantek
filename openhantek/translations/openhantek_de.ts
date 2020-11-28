@@ -488,7 +488,7 @@
     </message>
 </context>
 <context>
-    <name>OpenHantekMainWindow</name>
+    <name>MainWindow</name>
     <message>
         <location filename="../src/openhantek.cpp" line="62"/>
         <source>OpenHantek</source>
