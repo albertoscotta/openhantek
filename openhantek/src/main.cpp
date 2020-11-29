@@ -109,12 +109,24 @@ int main(int argc, char *argv[]) {
 
     //////// Load translations ////////
     QTranslator qtTranslator;
-    if (qtTranslator.load("qt_" + QLocale::system().name(), QLibraryInfo::location(QLibraryInfo::TranslationsPath)))
-        openHantekApplication.installTranslator(&qtTranslator);
-
     QTranslator openHantekTranslator;
-    if (openHantekTranslator.load(QLocale(), QLatin1String("openhantek"), QLatin1String("_"),
-                                  QLatin1String(":/translations"))) {
+    bool qtTranslatorFound;
+    bool openHantekTranslatorFound;
+
+    qtTranslatorFound = qtTranslator.load(
+        "qt_" + QLocale::system().name(),
+        QLibraryInfo::location(QLibraryInfo::TranslationsPath)
+    );
+    openHantekTranslatorFound = openHantekTranslator.load(
+        QLocale(), QLatin1String("openhantek"), QLatin1String("_"),
+        QLatin1String(":/translations")
+    );
+
+    // Only install translators if both are found
+    // If only one is found, it's better to leave English
+    // It looks more consistent.
+    if (qtTranslatorFound && openHantekTranslatorFound) {
+        openHantekApplication.installTranslator(&qtTranslator);
         openHantekApplication.installTranslator(&openHantekTranslator);
     }
 
