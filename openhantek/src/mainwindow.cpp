@@ -308,7 +308,7 @@ MainWindow::~MainWindow() { delete ui; }
 void MainWindow::showNewData(std::shared_ptr<PPresult> data) { dsoWidget->showNew(data); }
 
 void MainWindow::exporterStatusChanged(const QString &exporterName, const QString &status) {
-    ui->statusbar->showMessage(tr("%1: %2").arg(exporterName).arg(status));
+    ui->statusbar->showMessage(QString("%1: %2").arg(exporterName).arg(status));
 }
 
 void MainWindow::exporterProgressChanged() { exporterRegistry->checkForWaitingExporters(); }

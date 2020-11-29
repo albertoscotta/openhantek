@@ -38,9 +38,9 @@ bool LegacyExportDrawer::exportSamples(const PPresult *result, QPaintDevice* pai
     // Print trigger details
     painter.setPen(colorValues->voltage[settings->scope.trigger.source]);
     QString levelString = valueToString(settings->scope.voltage[settings->scope.trigger.source].trigger, UNIT_VOLTS, 3);
-    QString pretriggerString = tr("%L1%").arg((int)(settings->scope.trigger.position * 100 + 0.5));
+    QString pretriggerString = QString("%L1%").arg((int)(settings->scope.trigger.position * 100 + 0.5));
     painter.drawText(QRectF(0, 0, lineHeight * 10, lineHeight),
-                     tr("%1  %2  %3  %4")
+                     QString("%1  %2  %3  %4")
                          .arg(settings->scope.voltage[settings->scope.trigger.source].name,
                               Dso::slopeString(settings->scope.trigger.slope), levelString, pretriggerString));
 
@@ -49,19 +49,19 @@ bool LegacyExportDrawer::exportSamples(const PPresult *result, QPaintDevice* pai
     { // DataAnalyser mutex lock
         // Print sample count
         painter.setPen(colorValues->text);
-        painter.drawText(QRectF(lineHeight * 10, 0, stretchBase, lineHeight), tr("%1 S").arg(result->sampleCount()),
+        painter.drawText(QRectF(lineHeight * 10, 0, stretchBase, lineHeight), QString("%1 S").arg(result->sampleCount()),
                          QTextOption(Qt::AlignRight));
         // Print samplerate
         painter.drawText(QRectF(lineHeight * 10 + stretchBase, 0, stretchBase, lineHeight),
-                         valueToString(settings->scope.horizontal.samplerate, UNIT_SAMPLES) + tr("/s"),
+                         valueToString(settings->scope.horizontal.samplerate, UNIT_SAMPLES) + "/s",
                          QTextOption(Qt::AlignRight));
         // Print timebase
         painter.drawText(QRectF(lineHeight * 10 + stretchBase * 2, 0, stretchBase, lineHeight),
-                         valueToString(settings->scope.horizontal.timebase, UNIT_SECONDS, 0) + tr("/div"),
+                         valueToString(settings->scope.horizontal.timebase, UNIT_SECONDS, 0) + "/div",
                          QTextOption(Qt::AlignRight));
         // Print frequencybase
         painter.drawText(QRectF(lineHeight * 10 + stretchBase * 3, 0, stretchBase, lineHeight),
-                         valueToString(settings->scope.horizontal.frequencybase, UNIT_HERTZ, 0) + tr("/div"),
+                         valueToString(settings->scope.horizontal.frequencybase, UNIT_HERTZ, 0) + "/div",
                          QTextOption(Qt::AlignRight));
 
         // Draw the measurement table
@@ -87,14 +87,14 @@ bool LegacyExportDrawer::exportSamples(const PPresult *result, QPaintDevice* pai
 
                 // Print voltage gain
                 painter.drawText(QRectF(lineHeight * 6, top, stretchBase * 2, lineHeight),
-                                 valueToString(settings->scope.gain(channel), UNIT_VOLTS, 0) + tr("/div"),
+                                 valueToString(settings->scope.gain(channel), UNIT_VOLTS, 0) + "/div",
                                  QTextOption(Qt::AlignRight));
                 // Print spectrum magnitude
                 if (settings->scope.spectrum[channel].used) {
                     painter.setPen(colorValues->spectrum[channel]);
                     painter.drawText(QRectF(lineHeight * 6 + stretchBase * 2, top, stretchBase * 2, lineHeight),
                                      valueToString(settings->scope.spectrum[channel].magnitude, UNIT_DECIBEL, 0) +
-                                         tr("/div"),
+                                         "/div",
                                      QTextOption(Qt::AlignRight));
                 }
 
@@ -135,11 +135,11 @@ bool LegacyExportDrawer::exportSamples(const PPresult *result, QPaintDevice* pai
                              valueToString(1.0 / time, UNIT_HERTZ, 4), QTextOption(Qt::AlignRight));
 
             painter.drawText(QRectF(lineHeight * 10 + stretchBase * 2, top, stretchBase, lineHeight),
-                             valueToString(time / DIVS_TIME, UNIT_SECONDS, 3) + tr("/div"),
+                             valueToString(time / DIVS_TIME, UNIT_SECONDS, 3) + "/div",
                              QTextOption(Qt::AlignRight));
             painter.drawText(QRectF(lineHeight * 10 + stretchBase * 3, top, stretchBase, lineHeight),
                              valueToString(divs * settings->scope.horizontal.frequencybase / DIVS_TIME, UNIT_HERTZ, 3) +
-                                 tr("/div"),
+                                 "/div",
                              QTextOption(Qt::AlignRight));
         } else {
             scopeHeight = (double)paintDevice->height() - (channelCount + 4) * lineHeight;

@@ -66,7 +66,7 @@ void RawDevicesListModel::updateDeviceList()
         } else {
             entry.access = true;
             entry.devicename = readUSBdescriptor(handle, descriptor.iProduct);
-            entry.deviceinfo = tr("%1:%2 (%3 - %4)").arg(entry.vendorId,0,16).arg(entry.productId,0,16)
+            entry.deviceinfo = QString("%1:%2 (%3 - %4)").arg(entry.vendorId,0,16).arg(entry.productId,0,16)
                     .arg(entry.devicename).arg(readUSBdescriptor(handle, descriptor.iManufacturer));
             libusb_close(handle);
         }

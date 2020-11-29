@@ -8,7 +8,7 @@ DsoConfigColorsPage::DsoConfigColorsPage(DsoSettings *settings, QWidget *parent)
     enum { COL_LABEL = 0, COL_SCR_CHANNEL, COL_SCR_SPECTRUM, COL_PRT_CHANNEL, COL_PRT_SPECTRUM };
 
     // Plot Area
-    graphLabel = new QLabel(tr("<hr width=\"100%\"/>")); // 4*80
+    graphLabel = new QLabel("<hr width=\"100%\"/>"); // 4*80
     graphLabel->setAlignment(Qt::AlignRight);
     graphLabel->setTextFormat(Qt::RichText);
 

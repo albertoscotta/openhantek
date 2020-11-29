@@ -105,10 +105,8 @@
         <translation>Livello di riferimento</translation>
     </message>
     <message>
-        <location filename="../src/configdialog/DsoConfigAnalysisPage.cpp" line="26"/>
-        <location filename="../src/configdialog/DsoConfigAnalysisPage.cpp" line="37"/>
         <source>dBm</source>
-        <translation>dBm</translation>
+        <translation type="vanished">dBm</translation>
     </message>
     <message>
         <location filename="../src/configdialog/DsoConfigAnalysisPage.cpp" line="31"/>
@@ -164,14 +162,9 @@
         <translation>Schermo</translation>
     </message>
     <message>
-        <location filename="../src/configdialog/DsoConfigColorsPage.cpp" line="11"/>
-        <source>&lt;hr width=&quot;100%&quot;/&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/configdialog/DsoConfigColorsPage.cpp" line="17"/>
         <source>Print</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Stampa</translation>
     </message>
     <message>
         <location filename="../src/configdialog/DsoConfigColorsPage.cpp" line="45"/>
@@ -302,7 +295,7 @@
     <message>
         <location filename="../src/configdialog/DsoConfigScopePage.cpp" line="40"/>
         <source>Cursors</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Cursori</translation>
     </message>
 </context>
 <context>
@@ -313,14 +306,8 @@
         <translation>Zoom x%L1</translation>
     </message>
     <message>
-        <location filename="../src/dsowidget.cpp" line="397"/>
-        <location filename="../src/dsowidget.cpp" line="399"/>
-        <location filename="../src/dsowidget.cpp" line="442"/>
-        <location filename="../src/dsowidget.cpp" line="469"/>
-        <location filename="../src/dsowidget.cpp" line="477"/>
-        <location filename="../src/dsowidget.cpp" line="489"/>
         <source>/div</source>
-        <translation>/div</translation>
+        <translation type="vanished">/div</translation>
     </message>
     <message>
         <location filename="../src/dsowidget.cpp" line="70"/>
@@ -346,19 +333,16 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dsowidget.cpp" line="454"/>
         <source>%L1%</source>
-        <translation>%L1%</translation>
+        <translation type="vanished">%L1%</translation>
     </message>
     <message>
-        <location filename="../src/dsowidget.cpp" line="455"/>
         <source>%1  %2  %3  %4</source>
-        <translation>%1  %2  %3  %4</translation>
+        <translation type="vanished">%1  %2  %3  %4</translation>
     </message>
     <message>
-        <location filename="../src/dsowidget.cpp" line="483"/>
         <source>/s</source>
-        <translation>/s</translation>
+        <translation type="vanished">/s</translation>
     </message>
 </context>
 <context>
@@ -438,34 +422,24 @@
 <context>
     <name>LegacyExportDrawer</name>
     <message>
-        <location filename="../src/exporting/legacyexportdrawer.cpp" line="41"/>
         <source>%L1%</source>
-        <translation>%L1%</translation>
+        <translation type="vanished">%L1%</translation>
     </message>
     <message>
-        <location filename="../src/exporting/legacyexportdrawer.cpp" line="43"/>
         <source>%1  %2  %3  %4</source>
-        <translation>%1  %2  %3  %4</translation>
+        <translation type="vanished">%1  %2  %3  %4</translation>
     </message>
     <message>
-        <location filename="../src/exporting/legacyexportdrawer.cpp" line="52"/>
         <source>%1 S</source>
-        <translation>%1 S</translation>
+        <translation type="vanished">%1 S</translation>
     </message>
     <message>
-        <location filename="../src/exporting/legacyexportdrawer.cpp" line="56"/>
         <source>/s</source>
-        <translation>/s</translation>
+        <translation type="vanished">/s</translation>
     </message>
     <message>
-        <location filename="../src/exporting/legacyexportdrawer.cpp" line="60"/>
-        <location filename="../src/exporting/legacyexportdrawer.cpp" line="64"/>
-        <location filename="../src/exporting/legacyexportdrawer.cpp" line="90"/>
-        <location filename="../src/exporting/legacyexportdrawer.cpp" line="97"/>
-        <location filename="../src/exporting/legacyexportdrawer.cpp" line="138"/>
-        <location filename="../src/exporting/legacyexportdrawer.cpp" line="142"/>
         <source>/div</source>
-        <translation>/div</translation>
+        <translation type="vanished">/div</translation>
     </message>
     <message>
         <location filename="../src/exporting/legacyexportdrawer.cpp" line="130"/>
@@ -681,11 +655,6 @@
         <source>&lt;p&gt;This is a open source software for Hantek USB oscilloscopes.&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2010, 2011 Oliver Haag&lt;br&gt;&lt;a href=&apos;mailto:oliver.haag@gmail.com&apos;&gt;oliver.haag@gmail.com&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2012-2017 OpenHantek community&lt;br&gt;&lt;a href=&apos;https://github.com/OpenHantek/openhantek&apos;&gt;https://github.com/OpenHantek/openhantek&lt;/a&gt;&lt;/p&gt;</source>
         <translation>&lt;p&gt;Questo è un software libero per oscillioscopi USB Hantek.&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2010, 2011 Oliver Haag&lt;br&gt;&lt;a href=&apos;mailto:oliver.haag@gmail.com&apos;&gt;oliver.haag@gmail.com&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2012-2017 OpenHantek community&lt;br&gt;&lt;a href=&apos;https://github.com/OpenHantek/openhantek&apos;&gt;https://github.com/OpenHantek/openhantek&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
-    <message>
-        <location filename="../src/mainwindow.cpp" line="311"/>
-        <source>%1: %2</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>NewDeviceModelFromExisting</name>
@@ -780,104 +749,80 @@
 <context>
     <name>QApplication</name>
     <message>
-        <location filename="../src/utils/printutils.cpp" line="21"/>
         <source>%L1 µV</source>
-        <translation>%L1 µV</translation>
+        <translation type="vanished">%L1 µV</translation>
     </message>
     <message>
-        <location filename="../src/utils/printutils.cpp" line="25"/>
         <source>%L1 mV</source>
-        <translation>%L1 mV</translation>
+        <translation type="vanished">%L1 mV</translation>
     </message>
     <message>
-        <location filename="../src/utils/printutils.cpp" line="28"/>
         <source>%L1 V</source>
-        <translation>%L1 V</translation>
+        <translation type="vanished">%L1 V</translation>
     </message>
     <message>
-        <location filename="../src/utils/printutils.cpp" line="33"/>
         <source>%L1 dB</source>
-        <translation>%L1 dB</translation>
+        <translation type="vanished">%L1 dB</translation>
     </message>
     <message>
-        <location filename="../src/dsowidget.cpp" line="377"/>
-        <location filename="../src/utils/printutils.cpp" line="40"/>
         <source>%L1 ps</source>
-        <translation>%L1 ps</translation>
+        <translation type="vanished">%L1 ps</translation>
     </message>
     <message>
-        <location filename="../src/dsowidget.cpp" line="379"/>
-        <location filename="../src/utils/printutils.cpp" line="44"/>
         <source>%L1 ns</source>
-        <translation>%L1 ns</translation>
+        <translation type="vanished">%L1 ns</translation>
     </message>
     <message>
-        <location filename="../src/dsowidget.cpp" line="381"/>
-        <location filename="../src/utils/printutils.cpp" line="48"/>
         <source>%L1 µs</source>
-        <translation>%L1 µs</translation>
+        <translation type="vanished">%L1 µs</translation>
     </message>
     <message>
-        <location filename="../src/dsowidget.cpp" line="383"/>
-        <location filename="../src/utils/printutils.cpp" line="52"/>
         <source>%L1 ms</source>
-        <translation>%L1 ms</translation>
+        <translation type="vanished">%L1 ms</translation>
     </message>
     <message>
-        <location filename="../src/dsowidget.cpp" line="385"/>
-        <location filename="../src/utils/printutils.cpp" line="56"/>
         <source>%L1 s</source>
-        <translation>%L1 s</translation>
+        <translation type="vanished">%L1 s</translation>
     </message>
     <message>
-        <location filename="../src/utils/printutils.cpp" line="59"/>
         <source>%L1 min</source>
-        <translation>%L1 min</translation>
+        <translation type="vanished">%L1 min</translation>
     </message>
     <message>
-        <location filename="../src/utils/printutils.cpp" line="62"/>
         <source>%L1 h</source>
-        <translation>%L1 h</translation>
+        <translation type="vanished">%L1 h</translation>
     </message>
     <message>
-        <location filename="../src/utils/printutils.cpp" line="70"/>
         <source>%L1 Hz</source>
-        <translation>%L1 Hz</translation>
+        <translation type="vanished">%L1 Hz</translation>
     </message>
     <message>
-        <location filename="../src/utils/printutils.cpp" line="73"/>
         <source>%L1 kHz</source>
-        <translation>%L1 kHz</translation>
+        <translation type="vanished">%L1 kHz</translation>
     </message>
     <message>
-        <location filename="../src/utils/printutils.cpp" line="76"/>
         <source>%L1 MHz</source>
-        <translation>%L1 MHz</translation>
+        <translation type="vanished">%L1 MHz</translation>
     </message>
     <message>
-        <location filename="../src/utils/printutils.cpp" line="79"/>
         <source>%L1 GHz</source>
-        <translation>%L1 GHz</translation>
+        <translation type="vanished">%L1 GHz</translation>
     </message>
     <message>
-        <location filename="../src/utils/printutils.cpp" line="86"/>
         <source>%L1 S</source>
-        <translation>%L1 S</translation>
+        <translation type="vanished">%L1 S</translation>
     </message>
     <message>
-        <location filename="../src/utils/printutils.cpp" line="89"/>
         <source>%L1 kS</source>
-        <translation>%L1 kS</translation>
+        <translation type="vanished">%L1 kS</translation>
     </message>
     <message>
-        <location filename="../src/utils/printutils.cpp" line="92"/>
         <source>%L1 MS</source>
-        <translation>%L1 MS</translation>
+        <translation type="vanished">%L1 MS</translation>
     </message>
     <message>
-        <location filename="../src/utils/printutils.cpp" line="95"/>
         <source>%L1 GS</source>
-        <translation>%L1 GS</translation>
+        <translation type="vanished">%L1 GS</translation>
     </message>
     <message>
         <location filename="../src/settings.cpp" line="24"/>
@@ -913,15 +858,15 @@
         <translation>Valori separati da virgola (*.csv)</translation>
     </message>
     <message>
-        <location filename="../src/exporting/exportcsv.cpp" line="33"/>
         <location filename="../src/exporting/exportimage.cpp" line="35"/>
+        <location filename="../src/exporting/exportcsv.cpp" line="33"/>
         <source>Export file...</source>
         <translation>Esporta file...</translation>
     </message>
     <message>
         <location filename="../src/exporting/exportimage.cpp" line="21"/>
         <source>Export Image/PDF</source>
-	<translation>Esporta immagine/PDF</translation>
+        <translation>Esporta immagine/PDF</translation>
     </message>
     <message>
         <location filename="../src/exporting/exportimage.cpp" line="32"/>
@@ -936,7 +881,7 @@
     <message>
         <location filename="../src/exporting/exportprint.cpp" line="21"/>
         <source>Print</source>
-	<translation>Stampa</translation>
+        <translation>Stampa</translation>
     </message>
     <message>
         <location filename="../src/exporting/exportprint.cpp" line="38"/>
@@ -1010,7 +955,6 @@
     </message>
     <message>
         <location filename="../src/main.cpp" line="100"/>
-        <location filename="../src/test-main.cpp" line="100"/>
         <source>Use OpenGL ES instead of OpenGL</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1177,11 +1121,6 @@
         <source>%1:%2 - No access</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <location filename="../src/selectdevice/rawdeviceslistmodel.cpp" line="69"/>
-        <source>%1:%2 (%3 - %4)</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>SelectSupportedDevice</name>
@@ -1224,7 +1163,7 @@
     <message>
         <location filename="../src/selectdevice/selectsupporteddevice.cpp" line="54"/>
         <source>Device ready to use</source>
-	<translation>Dispositivo pronto all'uso</translation>
+        <translation>Dispositivo pronto all&apos;uso</translation>
     </message>
     <message>
         <location filename="../src/selectdevice/selectsupporteddevice.cpp" line="61"/>

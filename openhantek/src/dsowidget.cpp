@@ -374,15 +374,15 @@ static QString markerToString(DsoSettingsScope *scope, unsigned index) {
     int precision = 3 - (int)floor(log10(fabs(value)));
 
     if (scope->horizontal.timebase < 1e-9)
-        return QApplication::tr("%L1 ps").arg(value / 1e-12, 0, 'f', qBound(0, precision - 12, 3));
+        return QString("%L1 ps").arg(value / 1e-12, 0, 'f', qBound(0, precision - 12, 3));
     else if (scope->horizontal.timebase < 1e-6)
-        return QApplication::tr("%L1 ns").arg(value / 1e-9, 0, 'f', qBound(0, precision - 9, 3));
+        return QString("%L1 ns").arg(value / 1e-9, 0, 'f', qBound(0, precision - 9, 3));
     else if (scope->horizontal.timebase < 1e-3)
-        return QApplication::tr("%L1 µs").arg(value / 1e-6, 0, 'f', qBound(0, precision - 6, 3));
+        return QString("%L1 µs").arg(value / 1e-6, 0, 'f', qBound(0, precision - 6, 3));
     else if (scope->horizontal.timebase < 1)
-        return QApplication::tr("%L1 ms").arg(value / 1e-3, 0, 'f', qBound(0, precision - 3, 3));
+        return QString("%L1 ms").arg(value / 1e-3, 0, 'f', qBound(0, precision - 3, 3));
     else
-        return QApplication::tr("%L1 s").arg(value, 0, 'f', qBound(0, precision, 3));
+        return QString("%L1 s").arg(value, 0, 'f', qBound(0, precision, 3));
 }
 
 /// \brief Update the label about the marker measurements
@@ -394,9 +394,9 @@ void DsoWidget::updateMarkerDetails() {
     QString prefix(tr("Markers"));
     if (view->zoom) {
         prefix = tr("Zoom x%L1").arg(DIVS_TIME / divs, -1, 'g', 3);
-        markerTimebaseLabel->setText(valueToString(time / DIVS_TIME, UNIT_SECONDS, 3) + tr("/div"));
+        markerTimebaseLabel->setText(valueToString(time / DIVS_TIME, UNIT_SECONDS, 3) + "/div");
         markerFrequencybaseLabel->setText(
-            valueToString(divs * scope->horizontal.frequencybase / DIVS_TIME, UNIT_HERTZ, 4) + tr("/div"));
+            valueToString(divs * scope->horizontal.frequencybase / DIVS_TIME, UNIT_HERTZ, 4) + "/div");
     }
     markerInfoLabel->setText(prefix.append(":  %1  %2").arg(markerToString(scope, 0)).arg(markerToString(scope, 1)));
     markerTimeLabel->setText(valueToString(time, UNIT_SECONDS, 4));
@@ -438,8 +438,7 @@ void DsoWidget::updateSpectrumDetails(ChannelID channel) {
     setMeasurementVisible(channel);
 
     if (scope->spectrum[channel].used)
-        measurementMagnitudeLabel[channel]->setText(valueToString(scope->spectrum[channel].magnitude, UNIT_DECIBEL, 3) +
-                                                    tr("/div"));
+        measurementMagnitudeLabel[channel]->setText(valueToString(scope->spectrum[channel].magnitude, UNIT_DECIBEL, 3) + "/div");
     else
         measurementMagnitudeLabel[channel]->setText(QString());
 }
@@ -451,8 +450,8 @@ void DsoWidget::updateTriggerDetails() {
     tablePalette.setColor(QPalette::WindowText, view->screen.voltage[scope->trigger.source]);
     settingsTriggerLabel->setPalette(tablePalette);
     QString levelString = valueToString(scope->voltage[scope->trigger.source].trigger, UNIT_VOLTS, 3);
-    QString pretriggerString = tr("%L1%").arg((int)(scope->trigger.position * 100 + 0.5));
-    settingsTriggerLabel->setText(tr("%1  %2  %3  %4")
+    QString pretriggerString = QString("%L1%").arg((int)(scope->trigger.position * 100 + 0.5));
+    settingsTriggerLabel->setText(QString("%1  %2  %3  %4")
                                       .arg(scope->voltage[scope->trigger.source].name,
                                            Dso::slopeString(scope->trigger.slope), levelString, pretriggerString));
 
@@ -466,7 +465,7 @@ void DsoWidget::updateVoltageDetails(ChannelID channel) {
     setMeasurementVisible(channel);
 
     if (scope->voltage[channel].used)
-        measurementGainLabel[channel]->setText(valueToString(scope->gain(channel), UNIT_VOLTS, 3) + tr("/div"));
+        measurementGainLabel[channel]->setText(valueToString(scope->gain(channel), UNIT_VOLTS, 3) + "/div");
     else
         measurementGainLabel[channel]->setText(QString());
 }
@@ -474,19 +473,19 @@ void DsoWidget::updateVoltageDetails(ChannelID channel) {
 /// \brief Handles frequencybaseChanged signal from the horizontal dock.
 /// \param frequencybase The frequencybase used for displaying the trace.
 void DsoWidget::updateFrequencybase(double frequencybase) {
-    settingsFrequencybaseLabel->setText(valueToString(frequencybase, UNIT_HERTZ, 4) + tr("/div"));
+    settingsFrequencybaseLabel->setText(valueToString(frequencybase, UNIT_HERTZ, 4) + "/div");
 }
 
 /// \brief Updates the samplerate field after changing the samplerate.
 /// \param samplerate The samplerate set in the oscilloscope.
 void DsoWidget::updateSamplerate(double samplerate) {
-    settingsSamplerateLabel->setText(valueToString(samplerate, UNIT_SAMPLES, 4) + tr("/s"));
+    settingsSamplerateLabel->setText(valueToString(samplerate, UNIT_SAMPLES, 4) + "/s");
 }
 
 /// \brief Handles timebaseChanged signal from the horizontal dock.
 /// \param timebase The timebase used for displaying the trace.
 void DsoWidget::updateTimebase(double timebase) {
-    settingsTimebaseLabel->setText(valueToString(timebase, UNIT_SECONDS, 4) + tr("/div"));
+    settingsTimebaseLabel->setText(valueToString(timebase, UNIT_SECONDS, 4) + "/div");
 
     updateMarkerDetails();
 }
