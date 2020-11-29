@@ -1239,7 +1239,7 @@
     <message>
         <location filename="../src/selectdevice/selectsupporteddevice.cpp" line="75"/>
         <source>&lt;p&gt;OpenHantek did not find any compatible devices.&lt;/p&gt;&lt;p&gt;&lt;img align=&apos;right&apos; height=&apos;150&apos; src=&apos;qrc:///switch.png&apos;&gt;Don&apos;t forget to switch your device into oscilloscope mode if it has multiple modes.&lt;/p&gt;</source>
-        <translation>&lt;p&gt;OpenHantek non ha trovato nessun dispositovo compatibile.&lt;/p&gt;&lt;p&gt;&lt;img align=&apos;right&apos; height=&apos;150&apos; src=&apos;qrc:///switch.png&apos;&gt;Non dimenticare di mettere il tuo dispostivo in modalità oscilloscopio se ha più modalità di funzionamento.&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;OpenHantek non ha trovato nessun dispositivo compatibile.&lt;/p&gt;&lt;p&gt;&lt;img align=&apos;right&apos; height=&apos;150&apos; src=&apos;qrc:///switch.png&apos;&gt;Non dimenticare di mettere il tuo dispostivo in modalità oscilloscopio se ha più modalità di funzionamento.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/selectdevice/selectsupporteddevice.cpp" line="80"/>
@@ -1249,12 +1249,12 @@
     <message>
         <location filename="../src/selectdevice/selectsupporteddevice.cpp" line="84"/>
         <source>&lt;p&gt;Please make sure you have copied the udev rules file to &lt;b&gt;%1&lt;/b&gt; for correct USB access permissions.&lt;/p&gt;</source>
-        <translation>&lt;p&gt;Accertati di aver copiato il file con le regole per udev  &lt;b&gt;%1&lt;/b&gt; per aver i corretti permessi USB.&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;Per avere i permessi USB corretti accertati di aver copiato il file con le regole udev  &lt;b&gt;%1&lt;/b&gt;.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/selectdevice/selectsupporteddevice.cpp" line="88"/>
         <source>&lt;p&gt;Visit the build and run instruction &lt;a href=&apos;https://github.com/OpenHantek/openhantek/blob/master/docs/build.md&apos;&gt;website&lt;/a&gt; for help.&lt;/p&gt;</source>
-        <translation>&lt;p&gt;Visita il &lt;a href=&apos;https://github.com/OpenHantek/openhantek/blob/master/docs/build.md&apos;&gt;sito&lt;/a&gt; per aiuto su come compilare e eseguire.&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;Visita il &lt;a href=&apos;https://github.com/OpenHantek/openhantek/blob/master/docs/build.md&apos;&gt;il sito web&lt;/a&gt; per cercare aiuto su come compilare ed eseguire.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/selectdevice/selectsupporteddevice.cpp" line="125"/>
