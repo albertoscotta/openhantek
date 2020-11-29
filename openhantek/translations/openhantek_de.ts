@@ -487,7 +487,7 @@
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="74"/>
-        <source>toolBar</source>
+        <source>Toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
