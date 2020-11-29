@@ -105,10 +105,6 @@
         <translation>Livello di riferimento</translation>
     </message>
     <message>
-        <source>dBm</source>
-        <translation type="vanished">dBm</translation>
-    </message>
-    <message>
         <location filename="../src/configdialog/DsoConfigAnalysisPage.cpp" line="31"/>
         <source>Minimum magnitude</source>
         <translation>Minima intensità</translation>
@@ -306,10 +302,6 @@
         <translation>Zoom x%L1</translation>
     </message>
     <message>
-        <source>/div</source>
-        <translation type="vanished">/div</translation>
-    </message>
-    <message>
         <location filename="../src/dsowidget.cpp" line="70"/>
         <source>TR</source>
         <translation type="unfinished"></translation>
@@ -331,18 +323,6 @@
         <location filename="../src/dsowidget.cpp" line="426"/>
         <source>OFF</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%L1%</source>
-        <translation type="vanished">%L1%</translation>
-    </message>
-    <message>
-        <source>%1  %2  %3  %4</source>
-        <translation type="vanished">%1  %2  %3  %4</translation>
-    </message>
-    <message>
-        <source>/s</source>
-        <translation type="vanished">/s</translation>
     </message>
 </context>
 <context>
@@ -421,26 +401,6 @@
 </context>
 <context>
     <name>LegacyExportDrawer</name>
-    <message>
-        <source>%L1%</source>
-        <translation type="vanished">%L1%</translation>
-    </message>
-    <message>
-        <source>%1  %2  %3  %4</source>
-        <translation type="vanished">%1  %2  %3  %4</translation>
-    </message>
-    <message>
-        <source>%1 S</source>
-        <translation type="vanished">%1 S</translation>
-    </message>
-    <message>
-        <source>/s</source>
-        <translation type="vanished">/s</translation>
-    </message>
-    <message>
-        <source>/div</source>
-        <translation type="vanished">/div</translation>
-    </message>
     <message>
         <location filename="../src/exporting/legacyexportdrawer.cpp" line="130"/>
         <source>Zoom x%L1</source>
@@ -748,82 +708,6 @@
 </context>
 <context>
     <name>QApplication</name>
-    <message>
-        <source>%L1 µV</source>
-        <translation type="vanished">%L1 µV</translation>
-    </message>
-    <message>
-        <source>%L1 mV</source>
-        <translation type="vanished">%L1 mV</translation>
-    </message>
-    <message>
-        <source>%L1 V</source>
-        <translation type="vanished">%L1 V</translation>
-    </message>
-    <message>
-        <source>%L1 dB</source>
-        <translation type="vanished">%L1 dB</translation>
-    </message>
-    <message>
-        <source>%L1 ps</source>
-        <translation type="vanished">%L1 ps</translation>
-    </message>
-    <message>
-        <source>%L1 ns</source>
-        <translation type="vanished">%L1 ns</translation>
-    </message>
-    <message>
-        <source>%L1 µs</source>
-        <translation type="vanished">%L1 µs</translation>
-    </message>
-    <message>
-        <source>%L1 ms</source>
-        <translation type="vanished">%L1 ms</translation>
-    </message>
-    <message>
-        <source>%L1 s</source>
-        <translation type="vanished">%L1 s</translation>
-    </message>
-    <message>
-        <source>%L1 min</source>
-        <translation type="vanished">%L1 min</translation>
-    </message>
-    <message>
-        <source>%L1 h</source>
-        <translation type="vanished">%L1 h</translation>
-    </message>
-    <message>
-        <source>%L1 Hz</source>
-        <translation type="vanished">%L1 Hz</translation>
-    </message>
-    <message>
-        <source>%L1 kHz</source>
-        <translation type="vanished">%L1 kHz</translation>
-    </message>
-    <message>
-        <source>%L1 MHz</source>
-        <translation type="vanished">%L1 MHz</translation>
-    </message>
-    <message>
-        <source>%L1 GHz</source>
-        <translation type="vanished">%L1 GHz</translation>
-    </message>
-    <message>
-        <source>%L1 S</source>
-        <translation type="vanished">%L1 S</translation>
-    </message>
-    <message>
-        <source>%L1 kS</source>
-        <translation type="vanished">%L1 kS</translation>
-    </message>
-    <message>
-        <source>%L1 MS</source>
-        <translation type="vanished">%L1 MS</translation>
-    </message>
-    <message>
-        <source>%L1 GS</source>
-        <translation type="vanished">%L1 GS</translation>
-    </message>
     <message>
         <location filename="../src/settings.cpp" line="24"/>
         <source>CH%1</source>
