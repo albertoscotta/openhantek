@@ -120,17 +120,16 @@ class HantekDsoControl : public QObject {
 
     Dso::ErrorCode retrieveChannelLevelData();
 
-    /// \brief Calculated the nearest samplerate supported by the oscilloscope.
+    /// \brief Calculate the nearest samplerate supported by the oscilloscope.
     /// \param samplerate The target samplerate, that should be met as good as
-    /// possible.
+    ///     possible.
     /// \param fastRate true, if the fast rate mode is enabled.
-    /// \param maximum The target samplerate is the maximum allowed when true, the
-    /// minimum otherwise.
-    /// \param downsampler Pointer to where the selected downsampling factor should
-    /// be written.
+    /// \param downsampler Pointer to where the selected downsampling factor
+    ///     should be written.
     /// \return The nearest samplerate supported, 0.0 on error.
-    double getBestSamplerate(double samplerate, bool fastRate = false, bool maximum = false,
-                             unsigned *downsampler = 0) const;
+    double getBestSamplerate(
+        double samplerate, bool fastRate = false, unsigned *downsampler = 0
+    ) const;
 
     /// Get the number of samples that are expected returned by the scope.
     /// In rolling mode this is depends on the usb speed and packet size.

@@ -330,10 +330,13 @@ void HantekDsoControl::convertRawDataToSamples(const std::vector<unsigned char> 
     }
 }
 
-double HantekDsoControl::getBestSamplerate(double samplerate, bool fastRate, bool maximum,
-                                           unsigned *downsampler) const {
-    // Abort if the input value is invalid
-    if (samplerate <= 0.0) return 0.0;
+double HantekDsoControl::getBestSamplerate(
+    double samplerate, bool fastRate, unsigned *downsampler
+) const {
+    if (samplerate <= 0.0)
+        // Negative samplerate is invalid
+        // Abort
+        return 0.0;
 
     double bestSamplerate = 0.0;
 
@@ -345,72 +348,62 @@ double HantekDsoControl::getBestSamplerate(double samplerate, bool fastRate, boo
         limits = &(specification->samplerate.single);
 
     // Get downsampling factor that would provide the requested rate
-    double bestDownsampler = limits->base / specification->bufferDividers[controlsettings.recordLengthId] / samplerate;
-    // Base samplerate sufficient, or is the maximum better?
-    if (bestDownsampler < 1.0 &&
-        (samplerate <= limits->max / specification->bufferDividers[controlsettings.recordLengthId] || !maximum)) {
+    double bestDownsampler = limits->base / samplerate /
+        specification->bufferDividers[controlsettings.recordLengthId];
+
+    if (bestDownsampler < 1.0) {
+        // Base samplerate insufficient
         bestDownsampler = 0.0;
-        bestSamplerate = limits->max / specification->bufferDividers[controlsettings.recordLengthId];
+        bestSamplerate = limits->max /
+            specification->bufferDividers[controlsettings.recordLengthId];
     } else {
+        // Base samplerate sufficient
         switch (specification->cmdSetSamplerate) {
-        case BulkCode::SETTRIGGERANDSAMPLERATE:
-            // DSO-2090 supports the downsampling factors 1, 2, 4 and 5 using
-            // valueFast or all even values above using valueSlow
-            if ((maximum && bestDownsampler <= 5.0) || (!maximum && bestDownsampler < 6.0)) {
-                // valueFast is used
-                if (maximum) {
-                    // The samplerate shall not be higher, so we round up
-                    bestDownsampler = ceil(bestDownsampler);
-                    if (bestDownsampler > 2.0) // 3 and 4 not possible with the DSO-2090
-                        bestDownsampler = 5.0;
-                } else {
+            case BulkCode::SETTRIGGERANDSAMPLERATE:
+                // It supports the downsampling factors 1, 2 and 5 and
+                // all even values above
+                if (bestDownsampler < 5.0) {
+                    if (bestDownsampler > 2.0)
+                        bestDownsampler = 2.0;
                     // The samplerate shall not be lower, so we round down
                     bestDownsampler = floor(bestDownsampler);
-                    if (bestDownsampler > 2.0 && bestDownsampler < 5.0) // 3 and 4 not possible with the DSO-2090
-                        bestDownsampler = 2.0;
-                }
-            } else {
-                // valueSlow is used
-                if (maximum) {
-                    bestDownsampler = ceil(bestDownsampler / 2.0) * 2.0; // Round up to next even value
                 } else {
-                    bestDownsampler = floor(bestDownsampler / 2.0) * 2.0; // Round down to next even value
+                    // Round down to next even value
+                    bestDownsampler = floor(bestDownsampler / 2.0) * 2.0;
                 }
-                if (bestDownsampler > 2.0 * 0x10001) // Check for overflow
+
+                // Check for overflow
+                if (bestDownsampler > 2.0 * 0x10001)
                     bestDownsampler = 2.0 * 0x10001;
-            }
-            break;
 
-        case BulkCode::CSETTRIGGERORSAMPLERATE:
-            // DSO-5200 may not supports all downsampling factors, requires testing
-            if (maximum) {
-                bestDownsampler = ceil(bestDownsampler); // Round up to next integer value
-            } else {
-                bestDownsampler = floor(bestDownsampler); // Round down to next integer value
-            }
-            break;
+                break;
+            case BulkCode::CSETTRIGGERORSAMPLERATE:
+            case BulkCode::ESETTRIGGERORSAMPLERATE:
+                // It supports all downsampling factors
 
-        case BulkCode::ESETTRIGGERORSAMPLERATE:
-            // DSO-2250 doesn't have a fast value, so it supports all downsampling
-            // factors
-            if (maximum) {
-                bestDownsampler = ceil(bestDownsampler); // Round up to next integer value
-            } else {
-                bestDownsampler = floor(bestDownsampler); // Round down to next integer value
-            }
-            break;
+                // Round down to next integer value
+                bestDownsampler = floor(bestDownsampler);
 
-        default:
-            return 0.0;
+                // Limit maximum downsampler value t
+                // avoid overflows in send command
+                if (bestDownsampler > limits->maxDownsampler)
+                    bestDownsampler = limits->maxDownsampler;
+
+                break;
+            default:
+                // Abort
+                return 0.0;
         }
 
-        // Limit maximum downsampler value to avoid overflows in the sent commands
-        if (bestDownsampler > limits->maxDownsampler) bestDownsampler = limits->maxDownsampler;
-
-        bestSamplerate = limits->base / bestDownsampler / specification->bufferDividers[controlsettings.recordLengthId];
+        bestSamplerate = limits->base / bestDownsampler /
+            specification->bufferDividers[controlsettings.recordLengthId];
     }
 
-    if (downsampler) *downsampler = (unsigned)bestDownsampler;
+    // If passed downsampler pointer is not null
+    // then write the pointed area with the new bes downsampler
+    if (downsampler)
+        *downsampler = (unsigned)bestDownsampler;
+
     return bestSamplerate;
 }
 
@@ -622,26 +615,33 @@ Dso::ErrorCode HantekDsoControl::setRecordLength(unsigned index) {
     return Dso::ErrorCode::NONE;
 }
 
+// When the parameter samplerate is 0 then the samplerate that
+// was last set is set again.
 Dso::ErrorCode HantekDsoControl::setSamplerate(double samplerate) {
-    if (!device->isConnected()) return Dso::ErrorCode::CONNECTION;
+    if (!device->isConnected())
+        return Dso::ErrorCode::CONNECTION;
 
     if (samplerate == 0.0) {
         samplerate = controlsettings.samplerate.target.samplerate;
     } else {
         controlsettings.samplerate.target.samplerate = samplerate;
+        // To check if the following line is necessary
         controlsettings.samplerate.target.samplerateSet = ControlSettingsSamplerateTarget::Samplerrate;
     }
 
     if (!specification->isSoftwareTriggerDevice) {
-        // When possible, enable fast rate if it is required to reach the requested
-        // samplerate
-        bool fastRate = (controlsettings.usedChannels <= 1) &&
-                        (samplerate > specification->samplerate.single.max /
-                                          specification->bufferDividers[controlsettings.recordLengthId]);
+        // If it is required to reach the requested samplerate enable fast rate
+        // Do this only if it is possible
+        bool fastRate = (
+            (
+                samplerate > specification->samplerate.single.max /
+                specification->bufferDividers[controlsettings.recordLengthId]
+            ) && ( controlsettings.usedChannels <= 1 )
+        );
 
         // What is the nearest, at least as high samplerate the scope can provide?
         unsigned downsampler = 0;
-        getBestSamplerate(samplerate, fastRate, false, &(downsampler));
+        getBestSamplerate(samplerate, fastRate, &(downsampler));
 
         // Set the calculated samplerate
         if (this->updateSamplerate(downsampler, fastRate) == UINT_MAX)
