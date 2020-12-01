@@ -688,28 +688,28 @@ Dso::ErrorCode HantekDsoControl::setRecordTime(double duration) {
     if (!specification->isFixedSamplerateDevice) {
         // Calculate the samplerate that would still provide the requested
         // duration
-        double maxSamplerate =
-            (double)specification->samplerate.single.recordLengths[
-                controlsettings.recordLengthId
-            ] / duration;
+        //double maxSamplerate =
+        //    (double)specification->samplerate.single.recordLengths[
+        //        controlsettings.recordLengthId
+        //    ] / duration;
 
         // When possible, enable fast rate if the record time can't be set
         // that low to improve resolution
-        bool fastRate = (controlsettings.usedChannels <= 1) &&
-            (maxSamplerate >= specification->samplerate.multi.base /
-            specification->bufferDividers[controlsettings.recordLengthId]);
+        //bool fastRate = (controlsettings.usedChannels <= 1) &&
+        //    (maxSamplerate >= specification->samplerate.multi.base /
+        //    specification->bufferDividers[controlsettings.recordLengthId]);
 
         // What is the nearest, at most as high samplerate the scope can provide?
-        unsigned downsampler = 0;
+        //unsigned downsampler = 0;
         // There is something strange here
         // downsampler is not computed
 
         // Set the calculated samplerate
-        if (this->updateSamplerate(downsampler, fastRate) == UINT_MAX)
+//        if (this->updateSamplerate(downsampler, fastRate) == UINT_MAX)
             return Dso::ErrorCode::PARAMETER;
-        else {
-            return Dso::ErrorCode::NONE;
-        }
+//        else {
+//            return Dso::ErrorCode::NONE;
+//        }
     } else {
         // For now - we go for the 10240 size sampling - the other seems not to be supported
         // Find highest samplerate using less than 10240 samples to obtain our duration.
