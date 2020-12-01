@@ -461,119 +461,125 @@ unsigned HantekDsoControl::updateRecordLength(RecordLengthID index) {
     return controlsettings.samplerate.limits->recordLengths[index];
 }
 
-unsigned HantekDsoControl::updateSamplerate(unsigned downsampler, bool fastRate) {
+unsigned HantekDsoControl::updateSamplerate(
+    unsigned downsampler, bool fastRate
+) {
     // Get samplerate limits
-    const ControlSamplerateLimits *limits =
-        fastRate ? &specification->samplerate.multi : &specification->samplerate.single;
+    const ControlSamplerateLimits *limits;
+    if (fastRate)
+        limits = &specification->samplerate.multi;
+    else
+        limits = &specification->samplerate.single;
 
     // Set the calculated samplerate
     switch (specification->cmdSetSamplerate) {
-    case BulkCode::SETTRIGGERANDSAMPLERATE: {
-        short int downsamplerValue = 0;
-        unsigned char samplerateId = 0;
-        bool downsampling = false;
-
-        if (downsampler <= 5) {
-            // All dividers up to 5 are done using the special samplerate IDs
-            if (downsampler == 0 && limits->base >= limits->max)
-                samplerateId = 1;
-            else if (downsampler <= 2)
-                samplerateId = downsampler;
-            else { // Downsampling factors 3 and 4 are not supported
-                samplerateId = 3;
-                downsampler = 5;
-                downsamplerValue = (short int)0xffff;
+        case BulkCode::SETTRIGGERANDSAMPLERATE: {
+            short int downsamplerValue = 0;
+            unsigned char samplerateId = 0;
+            bool downsampling = false;
+    
+            if (downsampler <= 5) {
+                // All dividers up to 5 are done using the special samplerate IDs
+                if (downsampler == 0 && limits->base >= limits->max)
+                    samplerateId = 1;
+                else if (downsampler <= 2)
+                    samplerateId = downsampler;
+                else { // Downsampling factors 3 and 4 are not supported
+                    samplerateId = 3;
+                    downsampler = 5;
+                    downsamplerValue = (short int)0xffff;
+                }
+            } else {
+                // For any dividers above the downsampling factor can be set directly
+                downsampler &= ~0x0001; // Only even values possible
+                downsamplerValue = (short int)(0x10001 - (downsampler >> 1));
+    
+                downsampling = true;
             }
-        } else {
-            // For any dividers above the downsampling factor can be set directly
-            downsampler &= ~0x0001; // Only even values possible
-            downsamplerValue = (short int)(0x10001 - (downsampler >> 1));
-
-            downsampling = true;
+    
+            // Pointers to needed commands
+            BulkSetTriggerAndSamplerate *commandSetTriggerAndSamplerate =
+                modifyCommand<BulkSetTriggerAndSamplerate>(BulkCode::SETTRIGGERANDSAMPLERATE);
+    
+            // Store if samplerate ID or downsampling factor is used
+            commandSetTriggerAndSamplerate->setDownsamplingMode(downsampling);
+            // Store samplerate ID
+            commandSetTriggerAndSamplerate->setSamplerateId(samplerateId);
+            // Store downsampling factor
+            commandSetTriggerAndSamplerate->setDownsampler(downsamplerValue);
+            // Set fast rate when used
+            commandSetTriggerAndSamplerate->setFastRate(false /*fastRate*/);
+    
+            break;
         }
-
-        // Pointers to needed commands
-        BulkSetTriggerAndSamplerate *commandSetTriggerAndSamplerate =
-            modifyCommand<BulkSetTriggerAndSamplerate>(BulkCode::SETTRIGGERANDSAMPLERATE);
-
-        // Store if samplerate ID or downsampling factor is used
-        commandSetTriggerAndSamplerate->setDownsamplingMode(downsampling);
-        // Store samplerate ID
-        commandSetTriggerAndSamplerate->setSamplerateId(samplerateId);
-        // Store downsampling factor
-        commandSetTriggerAndSamplerate->setDownsampler(downsamplerValue);
-        // Set fast rate when used
-        commandSetTriggerAndSamplerate->setFastRate(false /*fastRate*/);
-
-        break;
-    }
-    case BulkCode::CSETTRIGGERORSAMPLERATE: {
-        // Split the resulting divider into the values understood by the device
-        // The fast value is kept at 4 (or 3) for slow sample rates
-        long int valueSlow = qMax(((long int)downsampler - 3) / 2, (long int)0);
-        unsigned char valueFast = downsampler - valueSlow * 2;
-
-        // Pointers to needed commands
-        BulkSetSamplerate5200 *commandSetSamplerate5200 =
-            modifyCommand<BulkSetSamplerate5200>(BulkCode::CSETTRIGGERORSAMPLERATE);
-        BulkSetTrigger5200 *commandSetTrigger5200 =
-            modifyCommand<BulkSetTrigger5200>(BulkCode::ESETTRIGGERORSAMPLERATE);
-
-        // Store samplerate fast value
-        commandSetSamplerate5200->setSamplerateFast(4 - valueFast);
-        // Store samplerate slow value (two's complement)
-        commandSetSamplerate5200->setSamplerateSlow(valueSlow == 0 ? 0 : 0xffff - valueSlow);
-        // Set fast rate when used
-        commandSetTrigger5200->setFastRate(fastRate);
-
-        break;
-    }
-    case BulkCode::ESETTRIGGERORSAMPLERATE: {
-        // Pointers to needed commands
-        BulkSetSamplerate2250 *commandSetSamplerate2250 =
-            modifyCommand<BulkSetSamplerate2250>(BulkCode::ESETTRIGGERORSAMPLERATE);
-
-        bool downsampling = downsampler > 1;
-        // Store downsampler state value
-        commandSetSamplerate2250->setDownsampling(downsampling);
-        // Store samplerate value
-        commandSetSamplerate2250->setSamplerate(downsampling ? 0x10001 - downsampler : 0);
-        // Set fast rate when used
-        commandSetSamplerate2250->setFastRate(fastRate);
-
-        break;
-    }
-    default:
-        return UINT_MAX;
+        case BulkCode::CSETTRIGGERORSAMPLERATE: {
+            // Split the resulting divider into the values understood by the device
+            // The fast value is kept at 4 (or 3) for slow sample rates
+            long int valueSlow = qMax(((long int)downsampler - 3) / 2, (long int)0);
+            unsigned char valueFast = downsampler - valueSlow * 2;
+    
+            // Pointers to needed commands
+            BulkSetSamplerate5200 *commandSetSamplerate5200 =
+                modifyCommand<BulkSetSamplerate5200>(BulkCode::CSETTRIGGERORSAMPLERATE);
+            BulkSetTrigger5200 *commandSetTrigger5200 =
+                modifyCommand<BulkSetTrigger5200>(BulkCode::ESETTRIGGERORSAMPLERATE);
+    
+            // Store samplerate fast value
+            commandSetSamplerate5200->setSamplerateFast(4 - valueFast);
+            // Store samplerate slow value (two's complement)
+            commandSetSamplerate5200->setSamplerateSlow(valueSlow == 0 ? 0 : 0xffff - valueSlow);
+            // Set fast rate when used
+            commandSetTrigger5200->setFastRate(fastRate);
+    
+            break;
+        }
+        case BulkCode::ESETTRIGGERORSAMPLERATE: {
+            // Pointers to needed command
+            BulkSetSamplerate2250 *commandSetSamplerate2250 =
+                modifyCommand<BulkSetSamplerate2250>(
+                        BulkCode::ESETTRIGGERORSAMPLERATE
+                );
+ 
+            bool downsampling = downsampler > 1;
+            // Store downsampler state value
+            commandSetSamplerate2250->setDownsampling(downsampling);
+            // Store samplerate value
+            commandSetSamplerate2250->setSamplerate(
+                downsampling ? 0x10001 - downsampler : 0
+            );
+            // Set fast rate when used
+            commandSetSamplerate2250->setFastRate(fastRate);
+    
+            break;
+        }
+        default:
+            return UINT_MAX;
     }
 
     // Update settings
-    bool fastRateChanged = fastRate != (controlsettings.samplerate.limits == &specification->samplerate.multi);
-    if (fastRateChanged) { controlsettings.samplerate.limits = limits; }
-
+    controlsettings.samplerate.limits = limits;
     controlsettings.samplerate.downsampler = downsampler;
     if (downsampler)
-        controlsettings.samplerate.current = controlsettings.samplerate.limits->base /
-                                             specification->bufferDividers[controlsettings.recordLengthId] /
-                                             downsampler;
+        controlsettings.samplerate.current =
+            controlsettings.samplerate.limits->base /
+            specification->bufferDividers[controlsettings.recordLengthId] /
+            downsampler;
     else
         controlsettings.samplerate.current =
-            controlsettings.samplerate.limits->max / specification->bufferDividers[controlsettings.recordLengthId];
+            controlsettings.samplerate.limits->max /
+            specification->bufferDividers[controlsettings.recordLengthId];
 
     // Update dependencies
     this->setPretriggerPosition(controlsettings.trigger.position);
-
-    // Emit signals for changed settings
-    //if (fastRateChanged) {
-    // The above is generally cool but not on initial setup
-    {
-        emit availableRecordLengthsChanged(controlsettings.samplerate.limits->recordLengths);
-        // This signal is not connected => useless to emit it
-        //emit recordLengthChanged(getRecordLength());
-    }
-
+    emit availableRecordLengthsChanged(
+        controlsettings.samplerate.limits->recordLengths
+    );
     // Check for Roll mode
-    if (!isRollMode()) emit recordTimeChanged((double)getRecordLength() / controlsettings.samplerate.current);
+    if (!isRollMode())
+        // Not in Roll mode
+        emit recordTimeChanged(
+            (double)getRecordLength() / controlsettings.samplerate.current
+        );
     emit samplerateChanged(controlsettings.samplerate.current);
 
     return downsampler;
@@ -639,16 +645,16 @@ Dso::ErrorCode HantekDsoControl::setSamplerate(double samplerate) {
             ) && ( controlsettings.usedChannels <= 1 )
         );
 
-        // What is the nearest, at least as high samplerate the scope can provide?
+        // What is the nearest (at least as high) samplerate the scope can
+        // provide?
         unsigned downsampler = 0;
         getBestSamplerate(samplerate, fastRate, &(downsampler));
 
         // Set the calculated samplerate
         if (this->updateSamplerate(downsampler, fastRate) == UINT_MAX)
             return Dso::ErrorCode::PARAMETER;
-        else {
+        else
             return Dso::ErrorCode::NONE;
-        }
     } else {
         unsigned sampleId;
         for (sampleId = 0; sampleId < specification->fixedSampleRates.size() - 1; ++sampleId)
