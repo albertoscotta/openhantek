@@ -580,7 +580,7 @@ unsigned HantekDsoControl::updateSamplerate(
 //        emit recordTimeChanged(
 //            (double)getRecordLength() / controlsettings.samplerate.current
 //        );
-    emit samplerateChanged(controlsettings.samplerate.current);
+//    emit samplerateChanged(controlsettings.samplerate.current);
 
     return downsampler;
 }
@@ -674,29 +674,35 @@ Dso::ErrorCode HantekDsoControl::setSamplerate(double samplerate) {
 }
 
 Dso::ErrorCode HantekDsoControl::setRecordTime(double duration) {
-    if (!device->isConnected()) return Dso::ErrorCode::CONNECTION;
+    if (!device->isConnected())
+        return Dso::ErrorCode::CONNECTION;
 
     if (duration == 0.0) {
         duration = controlsettings.samplerate.target.duration;
     } else {
         controlsettings.samplerate.target.duration = duration;
-        controlsettings.samplerate.target.samplerateSet = ControlSettingsSamplerateTarget::Duration;
+        controlsettings.samplerate.target.samplerateSet =
+            ControlSettingsSamplerateTarget::Duration;
     }
 
     if (!specification->isFixedSamplerateDevice) {
-        // Calculate the maximum samplerate that would still provide the requested
+        // Calculate the samplerate that would still provide the requested
         // duration
         double maxSamplerate =
-            (double)specification->samplerate.single.recordLengths[controlsettings.recordLengthId] / duration;
+            (double)specification->samplerate.single.recordLengths[
+                controlsettings.recordLengthId
+            ] / duration;
 
-        // When possible, enable fast rate if the record time can't be set that low
-        // to improve resolution
+        // When possible, enable fast rate if the record time can't be set
+        // that low to improve resolution
         bool fastRate = (controlsettings.usedChannels <= 1) &&
-                        (maxSamplerate >= specification->samplerate.multi.base /
-                                              specification->bufferDividers[controlsettings.recordLengthId]);
+            (maxSamplerate >= specification->samplerate.multi.base /
+            specification->bufferDividers[controlsettings.recordLengthId]);
 
         // What is the nearest, at most as high samplerate the scope can provide?
         unsigned downsampler = 0;
+        // There is something strange here
+        // downsampler is not computed
 
         // Set the calculated samplerate
         if (this->updateSamplerate(downsampler, fastRate) == UINT_MAX)
