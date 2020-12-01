@@ -575,11 +575,11 @@ unsigned HantekDsoControl::updateSamplerate(
         controlsettings.samplerate.limits->recordLengths
     );
     // Check for Roll mode
-    if (!isRollMode())
-        // Not in Roll mode
-        emit recordTimeChanged(
-            (double)getRecordLength() / controlsettings.samplerate.current
-        );
+//    if (!isRollMode())
+//        // Not in Roll mode
+//        emit recordTimeChanged(
+//            (double)getRecordLength() / controlsettings.samplerate.current
+//        );
     emit samplerateChanged(controlsettings.samplerate.current);
 
     return downsampler;
