@@ -540,7 +540,7 @@ unsigned HantekDsoControl::updateSamplerate(
                         BulkCode::ESETTRIGGERORSAMPLERATE
                 );
  
-            bool downsampling = downsampler > 1;
+            bool downsampling = downsampler > 0;
             // Store downsampler state value
             commandSetSamplerate2250->setDownsampling(downsampling);
             // Store samplerate value
