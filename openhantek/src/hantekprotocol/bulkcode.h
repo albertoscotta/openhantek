@@ -179,8 +179,9 @@ namespace Hantek {
 /// </p>
 /// <p>
 ///   The oscilloscope returns it's capture state and the trigger point. Not
-///   sure about this, looks like 248 16-bit words with nearly constant
-///   values. These can be converted to the start address of the data in the
+///   sure about this, looks like 248? (254) 16-bit words with nearly constant
+///   values(all zeros).
+///   These can be converted to the start address of the data in the
 ///   buffer (See Hantek::Control::calculateTriggerPoint):
 ///   <table>
 ///     <tr>
